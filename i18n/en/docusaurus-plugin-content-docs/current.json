@@ -1,0 +1,46 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Basics": {
+    "message": "Basics",
+    "description": "The label for category Basics in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Basics.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Basics in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Extras": {
+    "message": "Extras",
+    "description": "The label for category Extras in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Extras.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Extras in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for category Getting Started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Getting Started.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Getting Started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Datasources": {
+    "message": "Datasources",
+    "description": "The label for category Datasources in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Datasources.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Datasources in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Demo": {
+    "message": "Demo",
+    "description": "The label for category Demo in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Demo.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Demo in sidebar tutorialSidebar"
+  }
+}
