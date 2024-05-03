@@ -76,10 +76,10 @@ Click on `Connect Database` to connect to your existing Cosmos database to your 
 
 Your external Cosmos database will be connected to the platform, allowing you to transfer data seamlessly.
 
-# More databases
+### More databases
 
 More database support will soon be available. Here, you can stay updated with supported [databases](./overview.md).
 
-## Quick Links
+### Quick Links
 
 [Try Azure Cosmos DB free](https://learn.microsoft.com/en-us/azure/cosmos-db/try-free)

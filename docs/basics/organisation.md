@@ -31,7 +31,7 @@ Enter the email address of the collaborator and specify their role within the or
 
 ![invite](@site/static/img/invite.png)
 
-:::info Note
+:::info Important
 Only **Owner** and **Admin** can invite collaborators. Collaborators feature is not available in the free tier.
 :::
 

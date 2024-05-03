@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 title: 'Secrets'
 description: Quick Start with Secrets! 
 sidebar_label: Secrets 
@@ -8,11 +8,15 @@ sidebar_label: Secrets
 # Secrets
 
 Secrets are sensitive pieces of information that are vital for the secure functioning of your applications, such as API keys, database passwords, and access tokens. With Zeromagic, you can easily manage these secrets within your environment to ensure security and confidentiality.
-
+ 
 
 ## Create Secrets
 
-- To create a new secret, head to the **Secrets** section and click `Create Secret`. 
+- To create a new secret, head to the **Secrets** section in the **project console**. 
+
+![sidebar-secrets](@site/static/img/sidebar-secrets.png)
+
+- Click `Create Secret` and will launch a form to define your secret details. 
 - Identify the environment where you want to store the secret. You might need to select a specific environment from a list or menu.
 
 ![secret-env-name](@site/static/img/secret-env-name.png)
@@ -28,7 +32,7 @@ Secrets are sensitive pieces of information that are vital for the secure functi
 ![secret-values](@site/static/img/secret-values.png)
 
 ## Delete Secret
-You can delete you secret by clicking on delete button for the key which needs to be deleted.
+To permanently delete a secret, click the **Delete** button next to the key you want to remove. This action cannot be undone.
 
 ![secret-key](@site/static/img/secret-key.png)
 
