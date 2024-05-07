@@ -34,7 +34,7 @@ Navigate to the Providers tab and select `Mobile & OTP`. This action will prompt
 ![connection-mobile-otp](@site/static/img/connection-mobile-otp.png)
 :::info Important
 
-[Twilio Integration](../../integrations/twilio) must be configured to use this basic connection. 
+[Twilio Integration](/integrations/twilio) must be configured to use this basic connection. 
 
 :::
 

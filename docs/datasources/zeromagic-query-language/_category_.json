@@ -1,8 +1,8 @@
 {
-  "label": "Datasources",
+  "label": "Zeromagic Query Language",
   "position": 4,
-  "collapsible": false,
-  "collapsed": false,
+  "collapsible": true,
+  "collapsed": true,
   "link": {
     "type": "generated-index",
     "description": "Creating and managing database now made easy, start connecting now"

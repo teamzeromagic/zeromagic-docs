@@ -25,7 +25,7 @@ sidebar_label: Quickstart
 
 ### Supported API Architecture
 
-Here, you can find the list of supported [API Architectures](./overview#supported-api).
+Here, you can find the list of supported [API Architectures](/basics/modules/introduction#supported-api-architecture).
 
 
 ### Quick Links

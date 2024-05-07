@@ -122,17 +122,7 @@ const config: Config = {
           label: 'Blog',
           position: 'left',
         },
-        {
-          to: 'https://hasura.io/learn/',
-          label: 'Tutorials',
-          position: 'left',
-        },
-        {
-          to: 'https://hasura.io/changelog',
-          label: "What's New",
-          id: 'whats-new-link',
-          position: 'left',
-        }, 
+ 
         // {
         //   type: 'docsVersionDropdown',
         //   position: 'right',
@@ -177,10 +167,10 @@ const config: Config = {
         },
       ],
     },
-    footer: {
-      style: "dark",
-      copyright: `Copyright © ${new Date().getFullYear()} Zeromagic, Pvt. Ltd. Built with Docusaurus.`,
-    },
+    // footer: {
+    //   style: "light",
+    //   copyright: `Copyright © ${new Date().getFullYear()} Zeromagic, Pvt. Ltd. Built with Docusaurus.`,
+    // },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

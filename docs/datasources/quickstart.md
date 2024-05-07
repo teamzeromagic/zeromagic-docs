@@ -78,7 +78,7 @@ Your external Cosmos database will be connected to the platform, allowing you to
 
 ### More databases
 
-More database support will soon be available. Here, you can stay updated with supported [databases](./overview.md).
+More database support will soon be available. Here, you can stay updated with supported [databases](/datasources/introduction).
 
 ### Quick Links
 

@@ -1,6 +1,8 @@
 {
-  "label": "Demo",
-  "position": 10,
+  "label": "Action Blocks",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": true,
   "link": {
     "type": "generated-index",
     "description": "5 minutes to learn the most important Docusaurus concepts."

@@ -16,7 +16,7 @@ Our platform simplifies user management by offering everything you need within t
 
 
 ### Quick Links
-- [Authentication Methods](./methods.md)
-- [Template Configurations](./templates.md)
-- [User Management](./users.md)
+- [Authentication Methods](/docs/basics/authentication/methods/introduction.md)
+- [Template Configurations](/docs/basics/authentication/templates.md)
+- [User Management](/docs/basics/authentication/users.md)
 

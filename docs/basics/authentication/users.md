@@ -68,9 +68,9 @@ Once a user is created with Email-Password authentication, they automatically ga
 
 # Enable Authentication Methods
 
-More database support will soon be available. Here, you can stay updated with supported [databases](./overview.md).
+More database support will soon be available. Here, you can stay updated with supported [methods](/basics/authentication/methods/introduction).
 
 ## Quick Links
 
-- [Authentication Methods](./methods.md)
-- [Template Configurations](./templates.md)
+- [Authentication Methods](/basics/authentication/methods/introduction)
+- [Template Configurations](/basics/authentication/templates)

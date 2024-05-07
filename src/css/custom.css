@@ -5,29 +5,30 @@
  */
 
 /* You can override the default Infima variables here. */
-:root { 
-    --ifm-color-primary: #366aa7;
-    --ifm-color-primary-dark: #315f96;
-    --ifm-color-primary-darker: #2e5a8e;
-    --ifm-color-primary-darkest: #264a75;
-    --ifm-color-primary-light: #3b75b8;
-    --ifm-color-primary-lighter: #3e7ac0;
-    --ifm-color-primary-lightest: #578bc9;
+:root {
+  --ifm-color-primary: #366aa7;
+  --ifm-color-primary-dark: #315f96;
+  --ifm-color-primary-darker: #2e5a8e;
+  --ifm-color-primary-darkest: #264a75;
+  --ifm-color-primary-light: #3b75b8;
+  --ifm-color-primary-lighter: #3e7ac0;
+  --ifm-color-primary-lightest: #578bc9;
+  --ifm-color-markdown-heading: #334155;
   --ifm-code-font-size: 95%;
   --ifm-global-radius: 4px;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] { 
-    --ifm-color-primary: #366aa7;
-    --ifm-color-primary-dark: #315f96;
-    --ifm-color-primary-darker: #2e5a8e;
-    --ifm-color-primary-darkest: #264a75;
-    --ifm-color-primary-light: #3b75b8;
-    --ifm-color-primary-lighter: #3e7ac0;
-    --ifm-color-primary-lightest: #578bc9;
+[data-theme="dark"] {
+  --ifm-color-primary: #366aa7;
+  --ifm-color-primary-dark: #315f96;
+  --ifm-color-primary-darker: #2e5a8e;
+  --ifm-color-primary-darkest: #264a75;
+  --ifm-color-primary-light: #3b75b8;
+  --ifm-color-primary-lighter: #3e7ac0;
+  --ifm-color-primary-lightest: #578bc9;
+  --ifm-color-markdown-heading: #ffffff;
   --ifm-global-radius: 4px;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
@@ -38,61 +39,77 @@
 }
 
 .navbar__title {
-  display:  none;
+  display: none;
 }
 
-.navbar__brand{
+.navbar__brand {
   margin-right: 0rem;
 }
-.nav-link_getting-started{
-    background-color: var(--ifm-color-primary-light);
-    border-radius: var(--ifm-global-radius);
-    color: white ;
-    font-weight: 500;
-    margin-right: .5rem;
-    padding: .4rem 1rem;
-    text-transform: capitalize;
-    white-space: nowrap;
+.nav-link_getting-started {
+  background-color: var(--ifm-color-primary-light);
+  border-radius: var(--ifm-global-radius);
+  color: white;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  padding: 0.4rem 1rem;
+  text-transform: capitalize;
+  white-space: nowrap;
 }
 
-
-.menu__link{
+.menu__link {
   font-size: 14px;
 }
 
-.markdown h1, h2, h3, h4 , h5 , h6{ 
-  color: #334155;
+.menu__list-item-collapsible {
+  font-weight: bolder !important;
+  letter-spacing: 0.5px;
+}
+ 
 
+.menu__link--sublist {
+  /* color: var(--ifm-color-markdown-heading) !important; */
+  font-weight: 500 !important;
+  letter-spacing: 0rem !important;
 }
 
-  .markdown h1 {
+.theme-doc-sidebar-item-category-level-1 {
+  margin-bottom: 1.3rem !important;
+}
+.markdown h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--ifm-color-markdown-heading);
+}
+
+.markdown h1 {
   font-size: 2rem;
 }
 .card-container {
   display: flex; /* Enable flexbox layout */
   flex-wrap: wrap; /* Allow cards to wrap to a new line if needed */
-  gap: 10px;  /* Add some spacing between cards */
+  gap: 10px; /* Add some spacing between cards */
 }
 
-.card { 
-  background-color: white;
+.card {
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .card img {
-  width: 150px; 
-  height: 150px;  
+  width: 150px;
+  height: 150px;
   object-fit: contain;
 }
 
-.card small{
+.card small {
   text-align: center;
 }
-
 
 /*  card text truncate */
 /* .text--truncate {

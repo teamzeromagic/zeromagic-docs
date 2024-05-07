@@ -1,6 +1,8 @@
 {
   "label": "Modules",
   "position": 5,
+  "collapsible": true,
+  "collapsed": true,
   "link": {
     "type": "generated-index", 
     "description": "Learn how to build modules on Zeromagic Platform."

@@ -12,10 +12,6 @@ import Mongo from '@site/static/img/mongodb.png';
 
 Zeromagic seamlessly integrates with various databases, enabling the automatic generation of a comprehensive data API. There's no need for manual coding of handlers, schemas, or resolvers. Whether it's connecting to your current databases or setting up new ones, Zeromagic simplifies the process, offering efficient management and connectivity.
 
-
-### Quick Links
-- [Get started with databases in 60 seconds](./databases.md)
-
 --- 
 ## Supported Databases
 
