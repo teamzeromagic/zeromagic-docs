@@ -1,0 +1,10 @@
+{
+  "label": "Methods",
+  "position": 1,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Setup your authentication methods"
+  }
+}
