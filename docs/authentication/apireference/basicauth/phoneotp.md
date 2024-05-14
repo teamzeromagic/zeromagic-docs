@@ -160,7 +160,7 @@ POST the data in the **application/json** format.
 | `mobile` | String | Mobile number of the user |
 | `access_token` | String | JWT access token is returned |
 | `token_type` | String | Value is *bearer* |
-| `expires_in` | String | Currently no expiry time for token, Returns None |
+| `expires_in` | String | Currently no expiry time for token, Returns null |
 
 
 #### Request Example

@@ -19,4 +19,5 @@ Our platform simplifies user management by offering everything you need within t
 - [Authentication Methods](/authentication/quickstart/methods/introduction)
 - [Template Configurations](/authentication/quickstart/templates)
 - [Manage Users](/authentication/quickstart/users)
+- [API Reference](/authentication/apireference/generalinfo)
 

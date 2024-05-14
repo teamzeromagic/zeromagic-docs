@@ -109,7 +109,7 @@ POST the data in the **application/json** format.
 | `email_verification` | String | If email verification is required then **"pending"**, else status if **"verified"** if verification not required. |
 | `access_token` | String | JWT access token is returned |
 | `token_type` | String | Value is *bearer* |
-| `expires_in` | String | Currently no expiry time for token, Returns None |
+| `expires_in` | String | Currently no expiry time for token, Returns null |
 
 
 

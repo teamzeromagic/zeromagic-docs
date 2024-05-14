@@ -26,31 +26,31 @@ For example, if `https://api.zeromagic.in/auth/353d1499ab5149e194a53cf0f6c837f4/
 | API         | Path             |
 |-------------|------------------|
 | Sign-up    | [/email-password-signup](/authentication/apireference/basicauth/emailpassword#sign-up) |
-| Login      | [/email-password-login](https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/admin_crawl/url_patterns.html) |
-| Reset      | [/email-password-reset](https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/admin_crawl/url_patterns.html) |
+| Login      | [/email-password-login](/authentication/apireference/basicauth/emailpassword#login-api) |
+| Reset      | [/email-password-reset](/authentication/apireference/basicauth/emailpassword#password-reset-api) |
 
 ### Mobile number with otp API
 
 | API         | Path             |
 |-------------|------------------|
-| Sign-up    | [/mobile-otp-signup](https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/admin_crawl/url_patterns.html) |
-| Login      | [/mobile-otp-login](https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/admin_crawl/url_patterns.html) |
-| Verify OTP      | [/mobile-otp-verify](https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/admin_crawl/url_patterns.html) |
+| Sign-up    | [/mobile-otp-signup](/authentication/apireference/basicauth/phoneotp#signup-api) |
+| Login      | [/mobile-otp-login](/authentication/apireference/basicauth/phoneotp#login-api) |
+| Verify OTP      | [/mobile-otp-verify](/authentication/apireference/basicauth/phoneotp#verify-otp-api) |
 
 ### Username with password API
 
 | API         | Path             |
 |-------------|------------------|
-| Sign-up    | [/username-password-signup](https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/admin_crawl/url_patterns.html) |
-| Login      | [/username-password-login](https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/admin_crawl/url_patterns.html) |
+| Sign-up    | [/username-password-signup](/authentication/apireference/basicauth/usernamepass#signup-api) |
+| Login      | [/username-password-login](/authentication/apireference/basicauth/usernamepass#login-api) |
 
 ### Email with otp API
 
 | API         | Path             |
 |-------------|------------------|
-| Sign-up    | [/email-otp-signup](https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/admin_crawl/url_patterns.html) |
-| Login      | [/email-otp-login](https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/admin_crawl/url_patterns.html) |
-| Verify OTP      | [/email-otp-verify](https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/admin_crawl/url_patterns.html) |
+| Sign-up    | [/email-otp-signup](/authentication/apireference/basicauth/emailotp#signup-api) |
+| Login      | [/email-otp-login](/authentication/apireference/basicauth/emailotp#login-api) |
+| Verify OTP      | [/email-otp-verify](/authentication/apireference/basicauth/emailotp#verify-otp-api) |
 
 ## Social Authentication - Available APIs
 
@@ -58,12 +58,10 @@ The endpoint `/oauth` is common for all social authentication methods
 
 | API         | Path             |
 |-------------|------------------|
-| OAuth    | [/oauth](https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/admin_crawl/url_patterns.html) |
+| OAuth    | [/oauth](/authentication/apireference/socialconnection) |
 
-The list of supported social authentication methods
 
-| Provider    | Followed Protocol |
-|-------------|------------------|
-| Google    | OAuth2 |
+### Support Social Providers 
 
+To know about the supported social providers, visit here - [Supported Social Providers](/authentication/quickstart/methods/social#supported-social-providers)
 
