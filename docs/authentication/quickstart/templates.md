@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: "Templates"
 description: Quick Start with Templates!
 sidebar_label: Templates

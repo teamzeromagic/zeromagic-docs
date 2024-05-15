@@ -16,6 +16,7 @@ The `Providers` tab offers a variety of authentication methods that you can easi
 - **Email-password :** Classic method provides a familiar login experience for users using email and password.
 - **Email-OTP :** Secure and convenient method for users to verify their identities using one-time passwords sent to their email addresses
 - **Mobile number-OTP :** For added security, particularly for sensitive actions, leverage one-time passwords (OTPs) sent via SMS to verified mobile numbers.
+- **Username-password :** Enables a secure login experience for users using username and password.
 
-### OAuth Methods 
-- **Google Auth:** Enables users to log in using their Google accounts.
+### Social Methods 
+- **Google :** Enables users to log in using their Google accounts using OAuth2 protocol.
