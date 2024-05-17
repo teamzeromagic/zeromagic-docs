@@ -17,6 +17,7 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "facebook", // Usually your GitHub org/user name.
   projectName: "docusaurus", // Usually your repo name.
+  trailingSlash: true, 
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -56,19 +57,13 @@ const config: Config = {
     ],
   ],
 
-  themes: [
-    // ... Your other themes.
+  plugins: [ 
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
-      ({
-        // ... Your options.
-        // `hashed` is recommended as long-term-cache of index file is possible.
+      ({ 
         hashed: true,
-        // For Docs using Chinese, The `language` is recommended to set to:
-        // ```
-        // language: ["en", "zh"],
-        // ```
+        docsRouteBasePath : "/"         
       }),
     ],
   ],
@@ -76,43 +71,20 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     // image: "img/docusaurus-social-card.jpg",
-    // navbar: {
-    //   title: '',
-    //   // hideOnScroll: false,
-    //   logo: {
-    //     alt: "Zeromagic Logo",
-    //     src: "img/logo-full.svg",
-    //     href: 'https://hasura.io',
-    //   },
-    //   items: [
-    //     {
-    //       type: "docSidebar",
-    //       sidebarId: "tutorialSidebar",
-    //       position: "right",
-    //       label: "Documentation",
-    //     },
-    //     { to: "/blog", label: "Blog", position: "right" },
-    //     {
-    //       href: "https://github.com/facebook/docusaurus",
-    //       label: "GitHub",      
-    //       position: "right",
-    //     }, 
-    //   ],
-    // },
  
     navbar: {
       hideOnScroll: false,
       title: '',
       logo: {
-        alt: 'Hasura Logo',
+        alt: 'Magic Logo',
         src: '/img/logo-full.svg',
         srcDark: '/img/logo-full.svg',
-        href: 'https://hasura.io',
+        href: 'https://zeromagic.in',
       },
       items: [
       { 
           type: "docSidebar" ,
-          sidebarId: "tutorialSidebar",
+          sidebarId: "magicSidebar",
           position: "left",
           label: "Documentation",
         },
