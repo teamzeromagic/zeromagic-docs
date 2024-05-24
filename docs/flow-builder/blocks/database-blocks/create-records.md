@@ -18,7 +18,9 @@ Creates a single record in a Cosmos DB container.
 
 **Records to Add**: The object to be inserted into the container.
 
-**Returns**: Return a `record` with the ID of newly created record.
+**Auto Create**: Create a collection if it doesnt exists in the container.
+
+**Returns**: Return a `val` with the ID of newly created record.
 
 ## 2. Create Many
 
@@ -28,4 +30,6 @@ Creates multiple records in a Cosmos DB container in a single operation.
 
 **Records to Add**: An array of objects to be inserted into the container.
 
-**Returns**: Return a `records` with the IDs of newly created records.
+**Auto Create**: Create a collection if it doesnt exists in the container.
+
+**Returns**: Return a `val` with the IDs of newly created records.

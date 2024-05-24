@@ -48,8 +48,7 @@ Both the left-hand side and right-hand side support a variety of data types, inc
 
 ### Return Value
 
-`condition` - Returns the result of the condition evaluation, indicating whether the condition evaluated to true or false.
-
+`val` - Returns the result of the condition evaluation, indicating whether the condition evaluated to true or false.
 
 :::warning Deleting If Else Block
 

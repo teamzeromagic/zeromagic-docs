@@ -20,7 +20,9 @@ Updates a single record by its ID in a Cosmos DB container.
 
 **Update Record:** The data that will be used to update the record.
 
-**Returns**: Return a `record` with the ID of newly created record.
+**Auto Create**: Create a collection if it doesnt exists in the container.
+
+**Returns**: Return a `val` with the ID of newly created record.
 
 ## 2. Update Many
 Updates multiple records based on a filter query in a Cosmos DB container.
@@ -37,4 +39,6 @@ It utilises the same condition syntax as the [If Conditions](/flow-builder/block
 
 **Update Record:** The data that will be used to update the record.
 
-**Returns**: Return a `records` with the IDs of newly created records.
+**Auto Create**: Create a collection if it doesnt exists in the container.
+
+**Returns**: Return a `val` with the IDs of newly created records.

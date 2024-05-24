@@ -18,7 +18,9 @@ The Zeromagic Query Language is a JSON-based query language specifically designe
 
 **Query Editor**: Custom Query block based on [**Zeromagic Query Language**](/datasources/zeromagic-query-language/overview) provides a user-friendly interface for composing and editing queries
 
-**Returns**: Return a `record` based on the executed ZQL database query in the editor.
+**Auto Create**: Create a collection if it doesnt exists in the container.
+
+**Returns**: Return a `val` based on the executed ZQL database query in the editor.
 
 
 ```jsx title="Custom Query Syntax"

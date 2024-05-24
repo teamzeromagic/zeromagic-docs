@@ -20,6 +20,8 @@ Deletes a single record by its ID from a Cosmos DB container.
 
 **Record ID**: The unique identifier of the record to be deleted.
 
+**Returns**: Return a `val` with the ID of deleted record.
+
 ## 2. Delete Many
 
 Deletes multiple records based on a filter query from a Cosmos DB container.
@@ -29,6 +31,8 @@ Deletes multiple records based on a filter query from a Cosmos DB container.
 **Container Name**: The name of the Cosmos DB container from which the records will be deleted.
 
 **Filter Query**: A filter query used to identify the records to be deleted. The filter query consists of a left value `(field name)` and a right value `(data to be evaluated)`.
+
+**Returns**: Return a `val` with the IDs of deleted records.
 
 It utilises the same condition syntax as the [If Conditions](/flow-builder/blocks/flow-control/if-else#condition-editor).
 

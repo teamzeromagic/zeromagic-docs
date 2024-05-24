@@ -1,9 +1,5 @@
 {
     "label": "API Reference",
-    "position": 3,
-    "link": {
-      "type": "generated-index",
-      "description": "API - Reference."
-    }
+    "position": 3 
   }
   

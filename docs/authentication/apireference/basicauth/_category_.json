@@ -2,10 +2,6 @@
     "label": "Basic Authentication",
     "position": 2,
     "collapsible": true,
-    "collapsed": true,
-    "link": {
-      "type": "generated-index",
-      "description": "API - Reference."
-    }
+    "collapsed": true 
   }
   

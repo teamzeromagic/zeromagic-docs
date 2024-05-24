@@ -26,7 +26,7 @@ The Loop Block allows you to iterate through a sequence of values, defined by a 
 
 ### Return Value
 
-`iterator` - Represents the current loop variable `i` that holds the value during each iteration.
+`val` - Represents the current loop variable `i` that holds the value during each iteration.
 
 :::warning Deleting For Loop
 

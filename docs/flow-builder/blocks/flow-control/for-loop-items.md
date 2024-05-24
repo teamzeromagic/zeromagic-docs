@@ -16,7 +16,7 @@ It utilises the same branch system as the [For Loop](for-loop#branches).
 
 ### Return Value
 
-`items` - Returns an array containing the modified or filtered items based on the code executed within the _Continues Until True_ branch. If the collection is not modified, the original collection is returned.
+`val` - Returns an array containing the modified or filtered items based on the code executed within the _Continues Until True_ branch. If the collection is not modified, the original collection is returned.
 
 :::warning Deleting For Loop Items
 

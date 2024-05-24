@@ -20,7 +20,7 @@ It utilises the same condition syntax as the [If Conditions](/flow-builder/block
 
 ### Return Value
 
-`condition` - Returns a value that can be compared to the evaluated expression.
+`val` - Returns a value that can be compared to the evaluated expression.
 
 
 :::info Important
