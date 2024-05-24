@@ -1,9 +1,8 @@
 {
     "label": "Quickstart",
     "position": 1,
-    "link": {
-      "type": "generated-index",
-      "description": "Setup and manage your authentication methods and users."
+    "customProps": {
+      "sidebar_pathname": "auth"
     }
-  }
+}
     
