@@ -2,9 +2,5 @@
   "label": "Zeromagic Query Language",
   "position": 4,
   "collapsible": true,
-  "collapsed": true,
-  "link": {
-    "type": "generated-index",
-    "description": "Creating and managing database now made easy, start connecting now"
-  }
+  "collapsed": true
 }
