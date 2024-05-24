@@ -30,7 +30,7 @@ Deletes multiple records based on a filter query from a Cosmos DB container.
 
 **Filter Query**: A filter query used to identify the records to be deleted. The filter query consists of a left value `(field name)` and a right value `(data to be evaluated)`.
 
-It utilises the same condition syntax as the [If Conditions](if-else#condition-editor).
+It utilises the same condition syntax as the [If Conditions](/flow-builder/blocks/flow-control/if-else#condition-editor).
 
 
 :::warning Return Value

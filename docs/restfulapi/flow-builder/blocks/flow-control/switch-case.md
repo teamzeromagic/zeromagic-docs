@@ -9,7 +9,7 @@ sidebar_label: Switch Case
 
 This property allows you to define conditions (cases) for branching. Similar to the expression editor, the implementation may offer visual tools or text input for creating conditions. 
 
-It utilises the same condition syntax as the [If Conditions](if-else#condition-editor).
+It utilises the same condition syntax as the [If Conditions](/flow-builder/blocks/flow-control/if-else#condition-editor).
 
 ###  Branch Selection:
 

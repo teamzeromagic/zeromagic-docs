@@ -7,7 +7,7 @@ sidebar_label: Mobile number with OTP
 
 # Mobile number with OTP - Basic Authentication
 
-The Mobile number with OTP authentication allows your client to authenticate using OTP method. The endpoints are pre-built and are easy to manage your authentication flow and users. To get your `{auth_base_url}`, check it out here - [Get started with base url](authentication/apireference/generalinfo#get-started-with-base-url).
+The Mobile number with OTP authentication allows your client to authenticate using OTP method. The endpoints are pre-built and are easy to manage your authentication flow and users. To get your `{auth_base_url}`, check it out here - [Get started with base url](/authentication/apireference/generalinfo#get-started-with-base-url).
 
 > Note : **APP-KEY** *to be passed in Headers can be obtained from the settings in the project dashboard*
 
