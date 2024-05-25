@@ -3,6 +3,7 @@ sidebar_position: 2
 title: 'Quickstart'
 description: Quick Start with Database! 
 sidebar_label: Quickstart 
+tags: [database, datasource, azure-cosmosdb] 
 ---
 
 # Connect Databases to Zeromagic

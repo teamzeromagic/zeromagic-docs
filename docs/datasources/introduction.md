@@ -3,6 +3,7 @@ sidebar_position: 1
 title: 'Introduction'
 description: Connect with multiple Databases! 
 sidebar_label: Introduction  
+tags: [database, datasource] 
 ---
 
 import Cosmos from '@site/static/img/azure-cosmos-db.png';

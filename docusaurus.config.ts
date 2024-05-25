@@ -46,11 +46,28 @@ const config: Config = {
         blog: {
           showReadingTime: true,
           blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
+          blogSidebarCount: 5,
+
+          blogTitle: 'Zeromagic blog!',
+          blogDescription: 'A Docusaurus powered blog!',
+          postsPerPage: 10,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+
+            feedOptions: {
+              type: 'all',
+              copyright: `Copyright © ${new Date().getFullYear()} Zeromagic`,
+              createFeedItems: async (params) => {
+                const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+                return defaultCreateFeedItems({
+                  // keep only the 10 most recent blog posts in the feed
+                  blogPosts: blogPosts.filter((item, index) => index < 2),
+                  ...rest,
+                });
+              },
+            },
         },
         theme: {
           customCss: "./src/css/custom.css",
