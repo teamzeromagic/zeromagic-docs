@@ -17,7 +17,7 @@ In this blog post, we'll guide you through connecting your external database, sp
 - Navigate to the `Database` section in the sidebar of the console.
 - Click on `Create Database` to start the process of creating a new database.
 
-![db-section](@site/static/blogs/db-section.png)
+![db-section](./db-section.png)
 
 
 ### 2. Enter Database Source Information
@@ -51,7 +51,7 @@ Click on the `Connect Database` button to establish the connection between your 
 
 Once you have established the connection, you can **test** the connection by clicking on `Test Connection`. 
 
-![cosmos-ext-db-conn](@site/static/blogs/ext-db.png)
+![cosmos-ext-db-conn](./ext-db.png)
 
 :::info Note
 

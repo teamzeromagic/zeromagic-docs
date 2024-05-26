@@ -11,9 +11,9 @@ The Loop Block offers a structured approach for iterating through a sequence of 
 
 The Loop Block allows you to iterate through a sequence of values, defined by a start value, an end value, and a step value. 
 
-**Start Value:** Defines the initial value from which the loop iteration begins.
+**Start:** Defines the initial value from which the loop iteration begins.
 
-**End Value:** Specifies the final value that marks the end of the iteration sequence.
+**Stop:** Specifies the final value that marks the end of the iteration sequence.
 
 **Step Value:** Defines the increment (positive) or decrement (negative) used to move from one iteration to the next. Defaults to 1 (increment).
 

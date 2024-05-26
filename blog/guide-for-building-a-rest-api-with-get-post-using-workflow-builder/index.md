@@ -11,7 +11,7 @@ In this blog post let expore how you can create your first rest API on Zeromagic
 ### Step 1: Login to Project Console
 Login to [Zeromagic Platform](https://github.com/) and go to you `Project Console`. Now navigate to `Modules` in the sidebar of the console.
 
-![ModuleDashboard](../static/blogs/module_console.png)
+![ModuleDashboard](./module_console.png)
 
 <!-- truncate -->
 
@@ -28,7 +28,7 @@ Now click on `Create Module` button to create a new module. This open a form to 
 > Note : API Path only follows the trailing slash.
 
 
-![CreateModule](../static/blogs/create-module.png)
+![CreateModule](./create-module.png)
 
 Once module is created, click on the module and you will be directed to the Flow Builder Page where you can create your `Rest API`. 
 
@@ -42,13 +42,13 @@ Look for a button labeled `Create Rest API` or `+` in the API List space within 
     - `Authentication Method`: If your API requires authentication to access certain or all resources, select the appropriate authentication method. Check on the Authentication to know more about authentication methods. 
     - `Request Method`: Specify the HTTP method that clients should use to interact with your API.
 
-![CreateAPI](../static/blogs/create-api.png)
+![CreateAPI](./create-api.png)
 
 ### Step 4: Update Workflow to create Spell data in Database
 
 The Worflow builder has 3 basic Blocks such `API Endpoint`, `Build JSON` and `HTTP Response` in the workflow canvas.  
 
-![Workflow Builder](../static/blogs/create-spell-workflow-builder.png)
+![Workflow Builder](./create-spell-workflow-builder.png)
 
 Now let's add `Cosmos Create One` block in the workflow to create `Spell` data in the database. 
 
@@ -56,14 +56,14 @@ Now let's add `Cosmos Create One` block in the workflow to create `Spell` data i
 
 In the options panel of the `Cosmos Create One` you can find the **container name** is predefined in `Free-Plan`. Now in the `Record to add` field set the body data of request. 
 
-![Request Body](../static/blogs/create-body.png)
+![Request Body](./create-body.png)
 
 Toggle on `Auto create` to automatically create a new instance of the schema with the specified container if it is not already created.
 
 
 Now in the `HTTP Response` update the **Response Variable** to `{{$createOne.val}}` which is output of the Cosmos Create One.
 
-![CreateOne Spell](../static/blogs/createOne-spell.png)
+![CreateOne Spell](./createOne-spell.png)
 
 :::info Note
 
@@ -85,7 +85,7 @@ Add the `Cosmos Read Many` block in the workflow to get all the information of t
 
 Now in the `HTTP Response` update the **Response Variable** to `{{$readMany.val}}` which is output of the Cosmos Read Many.
 
-![Read Many Spells](../static/blogs/readMany-spells.png)
+![Read Many Spells](./readMany-spells.png)
 
 Now click on the `Deploy` button such that the API is automatically deployed and can be accessed in the specific environment.
 

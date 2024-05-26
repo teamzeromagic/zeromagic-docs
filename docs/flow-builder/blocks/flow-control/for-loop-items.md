@@ -14,9 +14,41 @@ The Loop Items Block component empowers you to iterate through the elements of a
 
 It utilises the same branch system as the [For Loop](for-loop#branches).
 
-### Return Value
+### Accessing Value inside for loop
 
 `val` - Returns an array containing the modified or filtered items based on the code executed within the _Continues Until True_ branch. If the collection is not modified, the original collection is returned.
+
+To access a particular object from a collection(array of objects) you can access with the syntax below 
+
+```jsx
+{{$block-name.val.object-key}}
+```
+
+```jsx title="Example"
+// sample collection
+collections = [
+    {
+        name : "Rohith",
+        age : 21
+        city : "Chennai",
+    },
+    {
+        name : "Revanth",
+        age : 21
+        city : "Banglore",
+    },
+    {
+        name : "Aravind",
+        age : 22
+        city : "Mumbai",
+    }
+]
+
+// access current object inside Forloop
+// highlight-next-line
+{{$forLoop.val.name}}
+
+```
 
 :::warning Deleting For Loop Items
 
