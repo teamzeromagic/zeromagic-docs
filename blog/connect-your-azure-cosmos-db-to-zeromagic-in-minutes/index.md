@@ -1,10 +1,13 @@
 ---
-slug: connect-your-external-azure-cosmos-db-to-zeromagic-in-minutes
-title: Connecting Your External Azure Cosmos DB to Zeromagic in minutes
+slug: connect-your-azure-cosmos-db-to-zeromagic-in-minutes
+title: Connecting Your Azure Cosmos DB to Zeromagic in minutes
 tags: [tutorial,database, datasource, azure-cosmosdb] 
 authors: rohith
 date: 2024-05-25T10:00
 ---
+
+![thumbnail](./thumbnail.png)
+
 In this blog post, we'll guide you through connecting your external database, specifically Azure Cosmos DB, to the Zeromagic Platform in a matter of minutes. This seamless integration unlocks the power of Zeromagic's functionalities for your Cosmos DB data, allowing for efficient data management and automation.
 
 <!-- truncate -->

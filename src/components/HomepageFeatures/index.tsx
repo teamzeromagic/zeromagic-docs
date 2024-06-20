@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import ConceptFeatures from '../Concepts';
+import Comparison from '../Concepts';
 
 type FeatureItem = {
   title: string;
@@ -10,32 +12,38 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Create',
+    Svg: require('@site/static/img/create.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Establish REST endpoints, define authentication with built-in functionality, and validate your data.
+      </>
+    ), 
+  },
+  {
+    title: 'Build',
+    Svg: require('@site/static/img/build.svg').default,
+    description: (
+      <>
+        Combine APIs, third-party tools, database queries seamlessly, enabling smooth data flow and interaction.
+      </>
+    ), 
+  },
+  {
+    title: 'Deploy',
+    Svg: require('@site/static/img/deploy.svg').default,
+    description: (
+      <>
+        Go live in seconds with a single click, eliminating the need for devops tasks. Our platform handles hosting for you.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Scale',
+    Svg: require('@site/static/img/scale.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Build applications that can effortlessly scale to accommodate growing user bases and increased demand.
       </>
     ),
   },
@@ -43,12 +51,12 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({title, Svg, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col-2')}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
+        <Heading as="h2">{title}</Heading>
         <p>{description}</p>
       </div>
     </div>
@@ -58,12 +66,15 @@ function Feature({title, Svg, description}: FeatureItem) {
 export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
-      <div className="container">
+      <div className="container"> 
+        <Heading as="h1">From Concept to API in Minutes</Heading> 
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
-        </div>
+        </div> 
+        <br />
+        <Comparison />
       </div>
     </section>
   );

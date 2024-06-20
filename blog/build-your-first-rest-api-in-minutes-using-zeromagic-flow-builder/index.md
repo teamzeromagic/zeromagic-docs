@@ -1,15 +1,17 @@
 ---
-slug: guide-for-building-a-rest-api-with-get-post-using-workflow-builder
-title: Guide for Building a REST API with GET & POST using Workflow Builder 
+slug: build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder
+title: Build Your First REST API in minutes using Zeromagic Flow Builder
 tags: [workflow, tutorial, GET, POST] 
-authors: rohith
-date: 2021-09-13T10:00
+authors: rohith 
+date: 2024-05-27T10:00
 ---
 
-In this blog post let expore how you can create your first rest API on Zeromagic Platform. 
+![restapi-banner](./restapi-banner.png)
+
+In this blog post, we'll explore how to create your first REST API on the Zeromagic Platform. Whether you're a beginner or an experienced developer, our intuitive Workflow Builder will guide you through setting up endpoints, defining data models, and handling HTTP requests. Let's dive in and see how you can quickly build and deploy a functional REST API with GET and POST methods, empowering your applications with seamless data interactions.
 
 ### Step 1: Login to Project Console
-Login to [Zeromagic Platform](https://github.com/) and go to you `Project Console`. Now navigate to `Modules` in the sidebar of the console.
+Login to [Zeromagic Platform](https://github.com/) and go to you `Project Console`. Now navigate to `Rest API` in the sidebar of the console.
 
 ![ModuleDashboard](./module_console.png)
 

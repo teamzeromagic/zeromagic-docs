@@ -1,13 +1,13 @@
 ---
 sidebar_position: 2
-title: 'Create REST'
+title: 'Quick Start'
 description: Learn to create Restful API! 
-sidebar_label: Create REST
+sidebar_label: Quick Start
 ---
 
-# Create RESTful API
+# Quick Start with RESTful API
 
-- Within your Zeromagic project console, navigate to the `Modules` section. Locate and click on the specific module where you want to create your new API. This will take you to the Api Builder page.
+- Within your Zeromagic project console, navigate to the `Rest API` section. Locate and click on the specific module where you want to create your new API. This will take you to the Api Builder page.
 
 - Within the builder page, access the `Restful` section in the sidebar to find the Rest API Workflow builder.
 
@@ -35,7 +35,7 @@ sidebar_label: Create REST
 
 # API Flow Builder
 
-- Within your Zeromagic project console, navigate to the `Modules` section. Locate and click on the specific module where you want to create your new API. This will take you to the [Api Builder page](/flow-builder/overview).
+- Within your Zeromagic project console, navigate to the `Rest API` section. Locate and click on the specific module where you want to create your new API. This will take you to the [Api Builder page](/flow-builder/overview).
 
 ### Quick Links
-Learn more about [Flow Builder](/flow-builder/overview) 
+Learn more about [Flow Builder](/restapi/flow-builder/overview) 

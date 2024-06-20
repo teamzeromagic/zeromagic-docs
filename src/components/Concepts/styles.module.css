@@ -1,0 +1,25 @@
+.comparison-container {
+  padding-bottom: 8vmin;
+  padding-top: 8vmin;
+  overflow: hidden; 
+  position: relative;
+}
+
+.my-table{
+  margin-left: 11rem;
+  margin-right: 11rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.py-4 {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}

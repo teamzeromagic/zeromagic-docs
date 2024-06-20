@@ -1,7 +1,7 @@
 ---
-slug: decision-making-with-if-else-conditions-in-workflows
-title: Decision-Making with If-Else Conditions in Workflows 
-tags: [tutorial, ifelse, workflow]
+slug: decision-making-with-if-else-conditions-in-flow-builder
+title: Decision-Making with If-Else Conditions in Flow Builder
+tags: [tutorial, ifelse, flow-builder]
 authors: rohith
 date: 2024-05-26T10:00
 ---
@@ -9,6 +9,7 @@ This blog post will guide you through the world of if-else conditions in workflo
 
 The if-else condition is a basic programming construct used to execute different actions based on whether a condition is true or false.If-else conditions work similarly in workflow automation.If-else conditions can be used to direct the flow of tasks, handle exceptions, and ensure that the workflow adapts to varying inputs and scenarios.
 
+![thumbnail](./thumbnail.png)
 
 ## How IfElse Works:
 

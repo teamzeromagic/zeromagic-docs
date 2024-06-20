@@ -3,8 +3,10 @@ slug: how-to-use-multiple-environments-to-fetch-rest-apis
 title: How to Use Multiple Environments to Fetch REST APIs
 tags: [workflow, tutorial, GET, POST]
 authors: rohith
-date: 2021-09-13T10:00
+date: 2024-05-30T10:00
 ---
+  
+![env-banner](./env-banner.png)
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

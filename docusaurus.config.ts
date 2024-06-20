@@ -4,7 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Zeromagic",
-  tagline: "Instant Backend Builder",
+  tagline: "Build scalable backends at lightning speed!",
   favicon: "img/logo.svg",
 
   // Set the production url of your site here

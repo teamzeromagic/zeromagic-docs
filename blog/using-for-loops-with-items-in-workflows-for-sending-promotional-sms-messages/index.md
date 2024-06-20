@@ -5,8 +5,11 @@ tags: [tutorial, forloop, workflow, twilio]
 authors: rohith
 date: 2024-05-27T10:00
 ---
-<!-- For loops are a fundamental programming construct that allows you to repeat a set of actions a specified number of times. When integrated into workflows, for loops can make your processes smarter and more efficient by automating repetitive tasks. This blog post will guide you through the world of for loop conditions in workflows, demonstrating how to use them effectively with start, stop, and step values. -->
 
+![for-sms-banner](./for-sms-banner.png)
+
+For loops are a fundamental programming construct that allows you to repeat a set of actions a specified number of times. When integrated into workflows, for loops can make your processes smarter and more efficient by automating repetitive tasks. This blog post will guide you through the world of for loop conditions in workflows, demonstrating how to use them effectively.
+ 
 ## How ForLoop Works:
 <!-- A for loop is a control flow statement that executes a block of code a certain number of times. It typically includes three main components: -->
 
