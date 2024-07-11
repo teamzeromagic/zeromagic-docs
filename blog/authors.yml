@@ -1,0 +1,20 @@
+rohith:  
+  name: Rohith ND
+  title: Co-Founder
+  url: https://ndrohith09.netlify.app/
+  # image_url: https://github.com/teamzeromagic/zeromagic-docs/assets/73429989/d989c340-4665-46e4-a83f-2d20a97b973d
+  image_url: https://avatars.githubusercontent.com/u/73429989?v=4
+  email: ndrohith09@gmail.com
+
+revanth:
+  name: Revanth ND
+  title: Co-Founder
+  url: https://revanth2002.github.io/ndrevanth09/
+  # image_url: https://github.com/teamzeromagic/zeromagic-docs/assets/73429989/1ec8fa16-a946-4a36-9c8f-62f2978b72ff
+  image_url: ../static/avatar/revanth.JPG
+
+aravind:
+  name: Aravind Swaminathan
+  title: Co-Founder
+  url: https://www.linkedin.com/in/aravind-swaminathan-3756a21bb/
+  image_url: https://github.com/slorber.png

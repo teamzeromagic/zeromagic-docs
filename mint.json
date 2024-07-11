@@ -1,0 +1,162 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Zeromagic",
+  "logo": {
+    "dark": "/assets/logo/dark.svg",
+    "light": "/assets/logo/light.svg"
+  },
+  "favicon": "/assets/logo.svg",
+  "colors": {
+    "primary": "#3b75b8",
+    "light": "#578bc9",
+    "dark": "#3b75b8",
+    "anchors": {
+      "from": "#3b75b8",
+      "to": "#578bc9"
+    }
+  },
+  "topbarLinks": [
+    
+    {
+      "name": "Pricing",
+      "url": "mailto:hi@mintlify.com"
+    },
+    {
+      "name": "Support",
+      "url": "mailto:hi@mintlify.com"
+    },
+    {
+      "name": "Community",
+      "url": "mailto:hi@mintlify.com"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://dashboard.mintlify.com"
+  }, 
+  "tabs": [
+    {
+      "name": "Blogs",
+      "url": "blog"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Documentation",
+      "icon": "book-open-cover",
+      "url": "https://mintlify.com/docs"
+    },
+    {
+      "name": "Community",
+      "icon": "slack",
+      "url": "https://mintlify.com/community"
+    },
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://mintlify.com/blog"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "introduction",
+        "quickstart",
+        "development"
+      ]
+    },
+    {
+      "group": "Basics",
+      "pages": [
+        "basics/organisation",
+        "basics/project",
+        "basics/environment",
+        "basics/secrets",
+        {
+          "group": "Modules", 
+          "pages": [ 
+            "basics/modules/introduction",
+            "basics/modules/quickstart"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Auth",    
+      "pages": [ 
+         "authentication/overview",
+         {
+          "group": "Methods",
+          "pages": [
+            "authentication/methods/introduction",
+            "authentication/methods/basic",
+            "authentication/methods/social"
+          ]
+         }, 
+            "authentication/users",
+            "authentication/templates" ,
+            {
+              "group": "API Reference",
+              "pages": [
+                "authentication/api/generalinfo",
+                {
+                  "group": "Basic Authentication",
+                  "pages": [
+                    "authentication/api/basicauth/emailpassword",
+                    "authentication/api/basicauth/phoneotp",
+                    "authentication/api/basicauth/usernamepass",
+                    "authentication/api/basicauth/emailotp"
+                  ]
+                },
+                "authentication/api/socialconnection"
+              ]
+            }
+      ]
+    },{
+      "group": "GraphQL",
+      "pages": [
+        "graphql/overview",
+        "graphql/quickstart",
+        "graphql/dataconnectors"
+      ]
+    },
+    {
+      "group": "Variables",
+      "pages": [
+        "variables/environment-variables",
+        "variables/operations"
+      ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [
+        "integrations/introduction",
+        "integrations/chatgpt",
+        "integrations/twilio"
+      ]
+    },
+ 
+    {
+      "group": "Latest Blogs",
+      "pages": [
+        "blog/introduction",
+        "blog/build-your-first-graphql-api-in-minutes-with-zeromagic"
+      ]
+    }, 
+    
+    {
+      "group": "Endpoint Examples",
+      "pages": [
+        "api-reference/endpoint/get",
+        "api-reference/endpoint/create",
+        "api-reference/endpoint/delete"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "x": "https://x.com/mintlify",
+    "github": "https://github.com/mintlify",
+    "linkedin": "https://www.linkedin.com/company/mintsearch"
+  }
+}
