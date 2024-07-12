@@ -1,5 +1,4 @@
----
-slug: decision-making-with-if-else-conditions-in-flow-builder
+--- 
 title: Decision-Making with If-Else Conditions in Flow Builder
 tags: [tutorial, ifelse, flow-builder]
 authors: rohith
@@ -9,7 +8,7 @@ This blog post will guide you through the world of if-else conditions in workflo
 
 The if-else condition is a basic programming construct used to execute different actions based on whether a condition is true or false.If-else conditions work similarly in workflow automation.If-else conditions can be used to direct the flow of tasks, handle exceptions, and ensure that the workflow adapts to varying inputs and scenarios.
 
-![thumbnail](./thumbnail.png)
+![thumbnail](/assets/blogs/decision-making-with-if-else-conditions-in-workflows/thumbnail.png)
 
 ## How IfElse Works:
 
@@ -18,10 +17,9 @@ The if-else condition is a basic programming construct used to execute different
 2. **Evaluate the Condition:** The workflow checks if the condition is true or false.
 
 3. **Branch Out:** Based on the outcome, the workflow follows a predetermined path:
- - _If True:_ Execute the actions associated with the `true` branch.
- - _Else:_ Execute the actions associated with the `else` branch.
-
-<!-- truncate -->
+ - <ins>If True:</ins> Execute the actions associated with the `true` branch.
+ - <ins>Else:</ins> Execute the actions associated with the `else` branch.
+ 
 
 ## Example Scenario : Check if Order has Discount 
 
@@ -30,7 +28,7 @@ Let's consider an e-commerce workflow where we need to check if an order qualifi
 - The customer is a premium member.
 - The order is placed during a special promotion period.
 
-```jsx title="Example"
+```jsx Example
 If (orderValue > 100 && (isPremiumMember || isPromotionPeriod) ) {
     // Logic to apply discount
     return {"response" : "Discount Applied"}
@@ -43,11 +41,11 @@ If (orderValue > 100 && (isPremiumMember || isPromotionPeriod) ) {
 ### Setting up workflow
 1. Create a `Post` method which will take body data as `orderValue`, `isPremiumMember`, and `isPromotionPeriod`.
 
-![discount-api](./discount-api.png)
+![discount-api](/assets/blogs/decision-making-with-if-else-conditions-in-workflows/discount-api.png)
 
 2. Using an if-else, evaluate the combined condition to check if the combined criteria are met.
 
-![discount-condition](./discount-condition.png)
+![discount-condition](/assets/blogs/decision-making-with-if-else-conditions-in-workflows/discount-condition.png)
 
 3. Add a JSON block with Action name as `true_json` in True branch with `key=response` and `value=Discount Applied`. Update the Response Block output to `{{$true_json.val}}` and status code to `200`.
 
@@ -64,10 +62,10 @@ If (orderValue > 100 && (isPremiumMember || isPromotionPeriod) ) {
     "response": "Discount Not Applied"
 }
 ```
-![discount-flow](./discount-flow.png)
+![discount-flow](/assets/blogs/decision-making-with-if-else-conditions-in-workflows/discount-flow.png)
 
 5. Click `Deploy` to update the flow and to utilise your API.
 
-![discount-sucess](./discount-sucess.png)
+![discount-sucess](/assets/blogs/decision-making-with-if-else-conditions-in-workflows/discount-sucess.png)
 
 ### Testing the Discount API using Postman

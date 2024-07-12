@@ -5,7 +5,9 @@ sidebarTitle: Email with OTP
 
 The Email with OTP authentication allows your client to authenticate using OTP method. The endpoints are pre-built and are easy to manage your authentication flow and users. To get your `{auth_base_url}`, check it out here - [Get started with base url](/authentication/api/generalinfo#get-started-with-base-url).
 
-> Note : **APP-KEY** *to be passed in Headers can be obtained from the settings in the project dashboard*
+<Info>
+Note : **APP-KEY** to be passed in Headers can be obtained from the settings in the project dashboard
+</Info>
 
 <Note>
 **Sending Email OTP** - Currently, we don't support additional custom SMTP configuration. We send emails from our SMTP server. No configuration is needed for email setup
@@ -15,37 +17,45 @@ The Email with OTP authentication allows your client to authenticate using OTP m
 
 This endpoints allows you to create a new user using the email address and otp method.
 
-#### Path
-| Method | Endpoint |
-|---------|-------|
-|`POST` | `{auth_base_url}/email-otp-signup`|
-
-#### Header
-| Key | Datatype | Description|
-|-------|-------|----------|
-| `APP-KEY` * | String | App key of the particular project |
+  <Accordion title="Endpoint" defaultOpen="true">
+<ParamField path="POST" type="{auth_base_url}/email-otp-signup" />
+  </Accordion>
 
 
-#### Body Data
+  <Accordion title="Header">
+<ParamField query="APP-KEY" type="string" required>
+  App key of the particular project
+</ParamField>
+  </Accordion>
+
+   <Accordion title="Body Data" >
+
 POST the data in the **application/json** format.
 
-| Param | Datatype | Description|
-|-------|-------|----------|
-| `email` * | String | Email of the user |
+<ParamField body="email" type="string" required>
+  Email address of the user
+</ParamField> 
+  </Accordion>
+ 
 
 
-#### Response Body Data
+  <Accordion title="Response Body Data">
+
 The response with **201 CREATED** status code represents that user is created and the OTP is sent to the email address
 
-| Param | Datatype | Description|
-|-------|-------|----------|
-| `user_id` | String | User Id of the new created user |
-| `email` | String | Email of the user |
+ <ResponseField name="user_id" type="string">
+  User Id of the new created user 
+</ResponseField>
 
+<ResponseField name="email" type="string">
+  Email address of the user
+</ResponseField> 
+ 
+  </Accordion> 
 
-#### Request Example
+#### Example
 
-```jsx
+```jsx Request
 POST https://api.zeromagic.in/auth/353d1499ab5149e194a53cf0f6c837f4/development/email-otp-signup 
 HTTP/1.1
 APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
@@ -54,10 +64,8 @@ APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
     "email":"user@zeromagic.in"
 }
 ```
-
-#### Response Example
-
-```jsx
+ 
+```jsx Response
 HTTP/1.1 
 201 CREATED
 
@@ -71,36 +79,45 @@ HTTP/1.1
 
 This endpoints allows you to login a user using the email and otp method.
 
-#### Path
-| Method | Endpoint |
-|---------|-------|
-|`POST` | `{auth_base_url}/email-otp-login`|
 
-#### Header
-| Key | Datatype | Description|
-|-------|-------|----------|
-| `APP-KEY` * | String | App key of the particular project |
+  <Accordion title="Endpoint" >
+<ParamField path="POST" type="{auth_base_url}/email-otp-login" />
+  </Accordion>
 
 
-#### Body Data
+  <Accordion title="Header">
+<ParamField query="APP-KEY" type="string" required>
+  App key of the particular project
+</ParamField>
+  </Accordion>
+ 
+
+   <Accordion title="Body Data" >
+
 POST the data in the **application/json** format.
 
-| Param | Datatype | Description|
-|-------|-------|----------|
-| `email` * | String | Email of the user |
+<ParamField body="email" type="string" required>
+  Email address of the user
+</ParamField> 
+  </Accordion>
 
+    <Accordion title="Response Body Data">
 
-#### Response Body Data
 The response with **200 OK** status code represents that the OTP is sent to the email address
 
-| Param | Datatype | Description|
-|-------|-------|----------|
-| `user_id` | String | User Id of the user |
-| `email` | String | Email of the user |
+<ResponseField name="user_id" type="string">
+  User Id of the user
+</ResponseField>
 
-#### Request Example
+<ResponseField name="email" type="string">
+  Email address of the user
+</ResponseField>
 
-```jsx
+  </Accordion>
+
+#### Example
+ 
+```jsx Request
 POST https://api.zeromagic.in/auth/353d1499ab5149e194a53cf0f6c837f4/development/email-otp-login 
 HTTP/1.1
 APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
@@ -109,10 +126,9 @@ APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
     "email":"user@zeromagic.in"
 }
 ```
+  
 
-#### Response Example
-
-```jsx
+```jsx Response
 HTTP/1.1 
 200 OK
 
@@ -126,39 +142,60 @@ HTTP/1.1
 
 This endpoints allows you to verify the otp of the respective email address.
 
-#### Path
-| Method | Endpoint |
-|---------|-------|
-|`POST` | `{auth_base_url}/email-otp-verify`|
-
-#### Header
-| Key | Datatype | Description|
-|-------|-------|----------|
-| `APP-KEY` * | String | App key of the particular project |
+  <Accordion title="Endpoint" >
+<ParamField path="POST" type="{auth_base_url}/email-otp-verify" />
+  </Accordion>
 
 
-#### Body Data
+  <Accordion title="Header">
+<ParamField query="APP-KEY" type="string" required>
+  App key of the particular project
+</ParamField>
+  </Accordion>
+
+
+   <Accordion title="Body Data" >
+
 POST the data in the **application/json** format.
 
-| Param | Datatype | Description|
-|-------|-------|----------|
-| `email` * | String | Email of the user |
-| `otp_code` *| Integer | Otp sent to the email address |
+<ParamField body="email" type="string" required>
+  Email address of the user
+</ParamField> 
 
-#### Response Body Data
+<ParamField body="otp_code" type="integer" required>
+ Otp sent to the email address
+</ParamField> 
 
-| Param | Datatype | Description|
-|-------|-------|----------|
-| `user_id` | String | User Id of the user |
-| `email` * | String | Email of the user |
-| `access_token` | String | JWT access token is returned |
-| `token_type` | String | Value is *bearer* |
-| `expires_in` | String | Currently no expiry time for token, Returns null |
+  </Accordion>
 
 
-#### Request Example
+    <Accordion title="Response Body Data">
 
-```jsx
+<ResponseField name="user_id" type="string">
+  User Id of the user
+</ResponseField>
+
+<ResponseField name="email" type="string">
+  Email address of the user
+</ResponseField>
+
+<ResponseField name="access_token" type="string">
+  JWT access token is returned
+</ResponseField>
+
+<ResponseField name="token_type" type="string">
+  Value is *bearer*
+</ResponseField>
+
+<ResponseField name="expires_in" type="string">
+  Currently no expiry time for token, Returns null
+</ResponseField>
+
+  </Accordion>
+
+#### Example
+
+```jsx Request
 POST https://api.zeromagic.in/auth/353d1499ab5149e194a53cf0f6c837f4/development/email-otp-login 
 HTTP/1.1
 APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
@@ -169,9 +206,7 @@ APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
 }
 ```
 
-#### Response Example
-
-```jsx
+```jsx Response
 HTTP/1.1 
 200 OK
 

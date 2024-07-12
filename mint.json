@@ -3,9 +3,10 @@
   "name": "Zeromagic",
   "logo": {
     "dark": "/assets/logo/dark.svg",
-    "light": "/assets/logo/light.svg"
+    "light": "/assets/logo/light.svg",
+    "href": "https://zeromagic.in/"
   },
-  "favicon": "/assets/logo.svg",
+  "favicon": "/assets/logo/logo.svg",
   "colors": {
     "primary": "#3b75b8",
     "light": "#578bc9",
@@ -14,6 +15,12 @@
       "from": "#3b75b8",
       "to": "#578bc9"
     }
+  }, 
+  "seo": {
+  "indexHiddenPages": true
+},
+  "search": {
+    "prompt": "Search docs..."
   },
   "topbarLinks": [
     
@@ -34,17 +41,26 @@
     "name": "Get Started",
     "url": "https://dashboard.mintlify.com"
   }, 
+ "feedback" : {
+    "suggestEdit": true,
+    "raiseIssue": true,
+    "thumbsRating": true
+ },
   "tabs": [
     {
-      "name": "Blogs",
+      "name": "Blog",
       "url": "blog"
+    },
+    {
+      "name": "Learn",
+      "url": "learn"
     }
   ],
   "anchors": [
     {
       "name": "Documentation",
       "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "url": "http://localhost:3000/introduction"
     },
     {
       "name": "Community",
@@ -54,7 +70,12 @@
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "http://localhost:3000/blog/introduction"
+    },
+    {
+      "name": "Learn",
+      "icon": "graduation-cap",
+      "url": "http://localhost:3000/blog/introduction"
     }
   ],
   "navigation": [
@@ -62,6 +83,7 @@
       "group": "Get Started",
       "pages": [
         "introduction",
+        "overview",
         "quickstart",
         "development"
       ]
@@ -79,7 +101,8 @@
             "basics/modules/introduction",
             "basics/modules/quickstart"
           ]
-        }
+        },
+        "basics/deployment"
       ]
     },
     {
@@ -113,12 +136,75 @@
               ]
             }
       ]
-    },{
+    },
+    {
+      "group": "Restful",
+      "pages": [
+        "restapi/overview",
+        "restapi/quickstart",
+        {
+          "group": "Flow Builder",
+          "pages": [
+            "restapi/flow-builder/introduction",
+            {
+              "group": "Blocks",
+              "pages": [
+                {
+                  "group": "Action Blocks",
+                  "pages": [
+                    "restapi/flow-builder/blocks/action-blocks/declare-variable",
+                    "restapi/flow-builder/blocks/action-blocks/build-json",
+                    "restapi/flow-builder/blocks/action-blocks/http-response"
+                  ]
+                },
+                {
+                  "group": "Database Blocks",
+                  "pages": [
+                    "restapi/flow-builder/blocks/database-blocks/create-records",
+                    "restapi/flow-builder/blocks/database-blocks/read-records",
+                    "restapi/flow-builder/blocks/database-blocks/update-records",
+                    "restapi/flow-builder/blocks/database-blocks/delete-records", 
+                    "restapi/flow-builder/blocks/database-blocks/custom-query"
+                  ]
+                },
+                {
+                  "group": "Flow Control Blocks",
+                  "pages": [
+                    "restapi/flow-builder/blocks/flow-control/if-else",
+                    "restapi/flow-builder/blocks/flow-control/for-loop",
+                    "restapi/flow-builder/blocks/flow-control/for-loop-items",
+                    "restapi/flow-builder/blocks/flow-control/switch-case"
+                  ]
+                }
+              ]
+            } 
+          ]
+        },
+        "restapi/flow-builder/manageapi",
+        "restapi/flow-builder/debuglogs"
+      ]
+    },
+    {
       "group": "GraphQL",
       "pages": [
         "graphql/overview",
         "graphql/quickstart",
         "graphql/dataconnectors"
+      ]
+    },
+    {
+      "group": "Datasources",
+      "pages": [
+        "datasources/introduction",
+        "datasources/quickstart",
+        {
+          "group": "Zeromagic Query Language",
+          "pages": [
+            "datasources/zeromagic-query-language/overview",
+            "datasources/zeromagic-query-language/operators-property",
+            "datasources/zeromagic-query-language/database-operations"
+          ]
+        }
       ]
     },
     {
@@ -136,21 +222,33 @@
         "integrations/twilio"
       ]
     },
- 
+
     {
       "group": "Latest Blogs",
       "pages": [
         "blog/introduction",
-        "blog/build-your-first-graphql-api-in-minutes-with-zeromagic"
+        "blog/build-your-first-graphql-api-in-minutes-with-zeromagic",
+        "blog/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder"
+      ]
+    },
+    {
+      "group": "All Blogs",
+      "pages": [ 
+        "blog/how-to-use-multiple-environments-to-fetch-rest-apis",
+        "blog/connect-your-azure-cosmos-db-to-zeromagic-in-minutes",
+        "blog/decision-making-with-if-else-conditions-in-workflows",
+        "blog/learn-to-use-cosmos-database-operations",
+        "blog/learn-to-use-for-loops-in-workflows",
+        "blog/using-for-loops-with-items-in-workflows-for-sending-promotional-sms-messages"
       ]
     }, 
     
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "learn/endpoint/get",
+        "learn/endpoint/create",
+        "learn/endpoint/delete"
       ]
     }
   ],

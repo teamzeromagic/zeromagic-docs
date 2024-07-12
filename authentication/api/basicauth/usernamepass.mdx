@@ -5,44 +5,55 @@ sidebarTitle: Username Password
 
 
 The Username with Password authentication allows your client to authenticate using username and password method. The endpoints are pre-built and are easy to manage your authentication flow and users. To get your `{auth_base_url}`, check it out here - [Get started with base url](/authentication/api/generalinfo#get-started-with-base-url).
-
-> Note : **APP-KEY** *to be passed in Headers can be obtained from the settings in the project dashboard*
+<Info>
+Note : **APP-KEY** to be passed in Headers can be obtained from the settings in the project dashboard
+</Info>
 
 ## 1. Signup API
 
 This endpoints allows you to create a new user using the username and password method.
 
-#### Path
-| Method | Endpoint |
-|---------|-------|
-|`POST` | `{auth_base_url}/username-password-signup`|
-
-#### Header
-| Key | Datatype | Description|
-|-------|-------|----------|
-| `APP-KEY` * | String | App key of the particular project |
+  <Accordion title="Endpoint" defaultOpen="true">
+<ParamField path="POST" type="{auth_base_url}/username-password-signup" />
+  </Accordion>
 
 
-#### Body Data
+  <Accordion title="Header">
+<ParamField query="APP-KEY" type="string"  required>
+  App key of the particular project
+</ParamField>
+  </Accordion>
+ 
+
+  <Accordion title="Body Data" >
+
 POST the data in the **application/json** format.
 
-| Param | Datatype | Description|
-|-------|-------|----------|
-| `username` * | String | Username of the user. Check out the [username format here](/authentication/api/basicauth/usernamepass#username-validators) |
-| `password` * | String | Password of the user |
+<ParamField body="username" type="string" required>
+  Username of the user. Check out the [username format here](/authentication/api/basicauth/usernamepass#username-validators)
+</ParamField>
 
+<ParamField body="password" type="string" required>
+  Password of the user
+  </ParamField>
 
-#### Response Body Data
+  </Accordion>
 
-| Param | Datatype | Description|
-|-------|-------|----------|
-| `user_id` | String | User Id of the new created user |
-| `username`  | String | Username of the user |
+ 
+   <Accordion title="Response Body Data">
+ <ResponseField name="user_id" type="string">
+  User Id of the new created user 
+</ResponseField>
 
+<ResponseField name="username" type="string">
+  Username of the user
+</ResponseField> 
+ 
+  </Accordion>
+ 
+#### Example
 
-#### Request Example
-
-```jsx
+```jsx Request
 POST https://api.zeromagic.in/auth/353d1499ab5149e194a53cf0f6c837f4/development/username-password-signup 
 HTTP/1.1
 APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
@@ -52,10 +63,8 @@ APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
    "password": "user1234"
 }
 ```
-
-#### Response Example
-
-```jsx
+ 
+```jsx Response
 HTTP/1.1 
 201 CREATED
 
@@ -69,40 +78,62 @@ HTTP/1.1
 
 This endpoints allows you to login a user using the username and password method.
 
-#### Path
-| Method | Endpoint |
-|---------|-------|
-|`POST` | `{auth_base_url}/username-password-login`|
-
-#### Header
-| Key | Datatype | Description|
-|-------|-------|----------|
-| `APP-KEY` * | String | App key of the particular project |
+  <Accordion title="Endpoint" >
+<ParamField path="POST" type="{auth_base_url}/username-password-login" />
+  </Accordion>
 
 
-#### Body Data
+  <Accordion title="Header">
+<ParamField query="APP-KEY" type="string"  required>
+  App key of the particular project
+</ParamField>
+  </Accordion>
+  
+
+  <Accordion title="Body Data" >
+
 POST the data in the **application/json** format.
 
-| Param | Datatype | Description|
-|-------|-------|----------|
-| `username` * | String | Username of the user. Check out the [username format here](/authentication/api/basicauth/usernamepass#username-validators) |
-| `password` * | String | Password of the user |
+<ParamField body="username" type="string" required>
+  Username of the user. Check out the [username format here](/authentication/api/basicauth/usernamepass#username-validators)
+</ParamField>
+
+<ParamField body="password" type="string" required>
+  Password of the user
+  </ParamField>
+
+  </Accordion> 
 
 
-#### Response Body Data
-
-| Param | Datatype | Description|
-|-------|-------|----------|
-| `user_id` | String | User Id of the user |
-| `username`  | String | Username of the user |
-| `access_token` | String | JWT access token is returned |
-| `token_type` | String | Value is *bearer* |
-| `expires_in` | String | Currently no expiry time for token, Returns null |
+   <Accordion title="Response Body Data">
 
 
-#### Request Example
+<ResponseField name="user_id" type="string">
+  User Id of the user
+</ResponseField>
 
-```jsx
+<ResponseField name="username" type="string">
+ Username of the user
+</ResponseField>
+ 
+
+<ResponseField name="access_token" type="string">
+  JWT access token is returned
+</ResponseField>
+
+<ResponseField name="token_type" type="string">
+  Value is *bearer*
+</ResponseField>
+
+<ResponseField name="expires_in" type="string">
+  Currently no expiry time for token, Returns null
+</ResponseField>
+
+  </Accordion>
+ 
+#### Example
+
+```jsx Request
 POST https://api.zeromagic.in/auth/353d1499ab5149e194a53cf0f6c837f4/development/username-password-login 
 HTTP/1.1
 APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
@@ -112,10 +143,8 @@ APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
    "password": "user1234"
 }
 ```
-
-#### Response Example
-
-```jsx
+ 
+```jsx Response
 HTTP/1.1 
 200 OK
 
@@ -134,7 +163,7 @@ HTTP/1.1
 - The username cannot contain any spaces.
 - The username must begin with a letter (a-z or A-Z).
 
-```jsx title="Examples"
+```jsx Examples
 zeromagic_user
 Zerouser01
 ```

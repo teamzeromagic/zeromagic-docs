@@ -189,6 +189,12 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer"
+      },
+      "appId" : {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header",
+        "description": "API Key for authentication"
       }
     }
   }
