@@ -84,8 +84,7 @@
       "pages": [
         "introduction",
         "overview",
-        "quickstart",
-        "development"
+        "quickstart"
       ]
     },
     {
@@ -189,7 +188,8 @@
       "pages": [
         "graphql/overview",
         "graphql/quickstart",
-        "graphql/dataconnectors"
+        "graphql/dataconnectors",
+        "graphql/ai-schema-builder"
       ]
     },
     {
@@ -222,6 +222,12 @@
         "integrations/twilio"
       ]
     },
+    {
+      "group": "Materials",
+      "pages": [
+        "materials/FAQs"
+      ]
+    },
 
     {
       "group": "Latest Blogs",
@@ -241,16 +247,7 @@
         "blog/learn-to-use-for-loops-in-workflows",
         "blog/using-for-loops-with-items-in-workflows-for-sending-promotional-sms-messages"
       ]
-    }, 
-    
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "learn/endpoint/get",
-        "learn/endpoint/create",
-        "learn/endpoint/delete"
-      ]
-    }
+    } 
   ],
   "footerSocials": {
     "x": "https://x.com/mintlify",

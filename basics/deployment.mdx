@@ -2,3 +2,49 @@
 title: 'Deployment'
 icon : "cloud"
 ---
+
+Our platform offers a streamlined deployment feature that allows you to easily push your APIs to the desired environment. With just one click, you can manage your deployments efficiently and access your APIs through a simple URL format.
+
+![zm-deployment](/assets/images/zm-deployment.png)
+
+## Deployment Process
+
+Once you have created and tested your API, you are ready to deploy it.
+
+- For [**REST API**](/restapi/overview): Simply click the `Deploy` button to push your API to the deployment environments.
+- For [**GraphQL**](/graphql/overview): Your API is automatically deployed to the environments after you edit the `Schema`.
+
+## Access Your API
+
+Choose the environment where you want to access your API (e.g., development, staging, production).
+
+Your deployed API can be accessed using the following URL format: 
+
+```jsx
+{base_url}/{app_id}/{env_name}/{api_name}
+```
+
+- **base_url**:  The base URL provided by your platform. It remains constant across deployments.
+- **app_id**: The `APP ID` of your particular project.
+- **env_name**: The name of the environment (e.g., dev, staging, prod).
+- **api_name**: The name you assigned to your API during the building process.
+
+### Example
+
+If your base URL is `http://localhost:8000/app/` and your App ID is `a561a95719d24f46b0640f3b342f891e`, you want to deploy to the `staging` environment, and your API name is `user-management`, your API will be accessible at:
+
+```jsx
+http://localhost:8000/app/a561a95719d24f46b0640f3b342f891e/staging/user-management
+```
+
+<Note>
+You can copy the <ins>API Endpoint</ins> from the desired RestAPI/QraphQL builder page.
+</Note>
+
+
+## Benefits
+
+- **Simplicity**: Deploy your APIs with a single click.
+- **Efficiency**: Manage all your deployments from a central location.
+- **Scalability**: Easily deploy to different environments as needed.
+- **Reliability**: Ensure your APIs are accessible and performant in the desired environment.
