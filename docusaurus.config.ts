@@ -101,19 +101,24 @@ const config: Config = {
         href: 'https://zeromagic.in',
       },
       items: [
-      { 
+        { 
           type: "docSidebar" ,
           sidebarId: "magicSidebar",
           position: "left",
           label: "Documentation",
         },
- 
+        { 
+          type: "docSidebar" ,
+          sidebarId: "learnMagicSidebar",
+          position: "left",
+          label: "Tutorial",
+        },
         { 
           to: "/blog",
           label: 'Blog',
           position: 'left',
         },
- 
+        
         // {
         //   type: 'docsVersionDropdown',
         //   position: 'right',
