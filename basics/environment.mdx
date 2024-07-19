@@ -6,11 +6,24 @@ icon : "server"
 
 Environments provide a structured approach to managing deployments for your projects. Each environment acts as a distinct stage in your development lifecycle, allowing you to isolate, test, and ultimately deploy your user's API to production.
 
+{/* 
+Zeromagic offers distinct environments for:
+
+1. <ins>**REST API**</ins>: This environment is dedicated to supporting applications that interact using HTTP methods like GET, POST, PUT, and DELETE.
+2. <ins>**GraphQL**</ins>: This separate environment is specifically designed for applications that utilize the GraphQL query language.
+*/}
+
+<Note>
+Zeromagic maintains RestAPI and GraphQL environments independently to ensure optimal performance and stability for each interaction method.
+</Note>
+ 
 ## Create Environment
  
 - To create a new environment, head to the **Environments** section in the **project console**. 
 
-![sidebar-env](/assets/images/sidebar-env.png)
+{/* Navigate to either `RestAPI (or) GraphQL` environment section based on your task. */}
+
+![rest-env](/assets/images/rest-env.png)
 
 - Click `Create Environment` and will launch a form to define your environment details. 
 
@@ -18,7 +31,7 @@ Environments provide a structured approach to managing deployments for your proj
 - Select the specific `database` you want to connect to from the available dropdown menu. This database will be linked to this environment.
 - By clicking on `Create Environment` will set up your new environment, ready for deployment process.
 
-![secret-values](/assets/images/secret-values.png)
+![create-env](/assets/images/create-env.png)
 
 <Tip>
 Please note that the free tier of Zeromagic allows for only one environment.
@@ -29,7 +42,7 @@ Please note that the free tier of Zeromagic allows for only one environment.
 - Click on the specific environment you want to manage. This will open the environment's settings page.
 - Within the settings section, you can modify the `database` configuration associated with this environment
 
-![secret-key](/assets/images/secret-key.png)
+![manage-env](/assets/images/manage-env.png)
 
 - To permanently delete a environment, click the **Delete** in the settings section.
 

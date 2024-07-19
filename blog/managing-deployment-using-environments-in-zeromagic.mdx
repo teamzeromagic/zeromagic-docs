@@ -1,0 +1,71 @@
+--- 
+title: Managing Deployment Using Environments in Zeromagic
+tags: [tutorial, environments]
+authors: rohith
+date: 2024-06-01T10:00
+---
+ 
+![thumbnail](assets/blogs/managing-deployment-using-environments-in-zeromagic/thumbnail.png)
+
+In today's dynamic development landscape, managing APIs effectively is crucial. Our platform provides dedicated environments for REST and GraphQL APIs, 
+ensuring that your APIs are managed, deployed, and served in an optimized manner. Here’s a deep dive into how our platform handles these deployments:
+
+{/* #### 1. REST API Environment
+Our platform assigns a separate environment specifically for REST APIs. This dedicated space ensures that your RESTful services operate efficiently and are isolated from other types of API traffic.
+
+#### 2. GraphQL API Environment
+Similarly, we provide a distinct environment tailored for GraphQL APIs. This separation ensures that your GraphQL queries and mutations are handled with the utmost efficiency, without interference from REST API operations.
+*/}
+
+## A. Using Environment to Deploy REST API
+
+1. **Create a environment**: Create a new environment such as `production`,etc based on the functionality. This environment helps to managed the development of the API.
+
+![rest-api-env](assets/blogs/managing-deployment-using-environments-in-zeromagic/rest-api-env.png)
+
+<Note>
+Visit the docs to learn more about [creating environments](/basics/environment)
+</Note>
+
+2. **Build Your REST API**: Begin by designing and creating your REST API according to your application’s requirements.
+3. **Push to Deployment**: Once your API is ready and tested, a single click is all it takes to deploy it. Simply hit the `Deploy` button, and your API will be pushed to the designated environment.
+![rest-api-deploy](assets/blogs/managing-deployment-using-environments-in-zeromagic/rest-api-deploy.png)
+
+4. **Accessing the API**: After deployment, your REST API can be accessed via a specific URL. The format is `{base_url}/{env_name}/{api_name}`, ensuring a straightforward and consistent way to interact with your services.
+
+You can find the URL of the particular API in the `Details` tab of the RestAPI Builder page.
+
+![rest-api-endpoint](assets/blogs/managing-deployment-using-environments-in-zeromagic/rest-api-endpoint.png)
+
+## B. Using Environment to Deploy GraphQL
+
+1. **Create a environment**: Create a new environment such as `stag`,etc based on the functionality. This environment helps to managed the development of the API.
+
+![graph-env](assets/blogs/managing-deployment-using-environments-in-zeromagic/graph-env.png)
+
+
+2. **List Tables**: Start by using our connectors to list the tables from your database. Our AI Schema Builder will assist you in tracking all fields across these tables.
+
+<Note>
+Visit the docs to learn more about [GraphQL AI Schema Builder](/graphql/ai-schema-builder)
+</Note>
+
+3. **Automatic Schema Generation**: Once the tables are listed, our platform automatically generates the GraphQL schema. This schema defines the structure of your data and the queries and mutations you can perform.
+
+![graphql-schema](assets/blogs/managing-deployment-using-environments-in-zeromagic/graphql-schema.png)
+
+4. **Automatic Deployment**: The generated schema is `automatically pushed` to the GraphQL environment. This seamless process ensures that your GraphQL API is immediately ready for use without manual intervention.
+
+5. **Requesting the API**: You can now use the environment-specific URL to make requests to your GraphQL API, just as you would with a REST API.
+
+![graphiql](assets/blogs/managing-deployment-using-environments-in-zeromagic/graphiql.png)
+
+
+## Benefits of Using Our Platform
+
+- **Isolation**: Utilising Separate environments for REST and GraphQL APIs ensure optimal performance and security.
+- **Simplicity**: A single click for deployment reduces complexity and saves time.
+- **Efficiency**: Automatic schema generation and deployment for GraphQL APIs streamline the setup process.
+
+Our platform is designed to simplify API management, allowing you to focus on building great applications without worrying about the intricacies of deployment. 
+Whether you are working with REST or GraphQL, our dedicated environments and seamless deployment process ensure that your APIs are always ready to serve.
