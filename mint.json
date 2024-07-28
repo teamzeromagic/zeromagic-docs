@@ -26,20 +26,20 @@
     
     {
       "name": "Pricing",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:ndrohith@zeromagic.in"
     },
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:ndrohith@zeromagic.in"
     },
     {
       "name": "Community",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:ndrohith@zeromagic.in"
     }
   ],
   "topbarCtaButton": {
     "name": "Get Started",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://zeromagic.in/"
   }, 
  "feedback" : {
     "suggestEdit": true,
@@ -60,22 +60,22 @@
     {
       "name": "Documentation",
       "icon": "book-open-cover",
-      "url": "http://localhost:3000/introduction"
+      "url": "https://docs.zeromagic.in/introduction"
     },
     {
       "name": "Community",
       "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "url": "https://docs.zeromagic.in/introduction"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "http://localhost:3000/blog/introduction"
+      "url": "http://docs.zeromagic.in/blog/introduction"
     },
     {
       "name": "Learn",
       "icon": "graduation-cap",
-      "url": "http://localhost:3000/blog/introduction"
+      "url": "http://docs.zeromagic.in/blog/introduction"
     }
   ],
   "navigation": [
@@ -101,7 +101,8 @@
             "basics/modules/quickstart"
           ]
         },
-        "basics/deployment"
+        "basics/deployment",
+        "basics/magic-ai"
       ]
     },
     {
@@ -189,7 +190,8 @@
         "graphql/overview",
         "graphql/quickstart",
         "graphql/dataconnectors",
-        "graphql/ai-schema-builder"
+        "graphql/magic-ai-schema-builder",
+        "graphql/magic-ai-query-generator"
       ]
     },
     {
