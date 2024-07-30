@@ -58,6 +58,11 @@
   ],
   "anchors": [
     {
+      "name": "Magic AI",
+      "icon": "wand-magic-sparkles",
+      "url": "https://docs.zeromagic.in/basics/magic-ai"
+    },
+    {
       "name": "Documentation",
       "icon": "book-open-cover",
       "url": "https://docs.zeromagic.in/introduction"
@@ -180,8 +185,9 @@
             } 
           ]
         },
-        "restapi/flow-builder/manageapi",
-        "restapi/flow-builder/debuglogs"
+        "restapi/manageapi",
+        "restapi/debuglogs",
+        "restapi/magic-ai-flow-generator"
       ]
     },
     {
@@ -227,7 +233,8 @@
     {
       "group": "Materials",
       "pages": [
-        "materials/FAQs"
+        "materials/FAQs",
+        "materials/magic-ai-get-help"
       ]
     },
 
