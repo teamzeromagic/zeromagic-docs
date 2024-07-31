@@ -2,4 +2,70 @@
 title: 'Debug Logs' 
 icon: 'bug'
 ---
+ The Debug Logs feature is designed to streamline the debugging process for REST APIs. It provides real-time insights into API requests and responses, helping you quickly identify and resolve issues.
+Here’s how you can utilize this feature to optimize your API testing and debugging workflow:
  
+## Using the Debug Logs Feature
+
+1. Navigate to the RestAPI flow builder page. Access the `Logs` tab to start debugging your REST API.
+2. Click the Debug button. A form will open where you can to specify the details for your API execution.
+3. In the form, select the environment for the API execution, such as `dev` or `prod`.
+4. Provide Request Data: 
+    - **Params**: Enter the required parameters in JSON format.
+
+    ```jsx Sample Data
+    {
+        "param1" : "value1",
+        "param2" : "value2"
+        ... // other params
+    }
+    ```
+    
+    - **Headers**:  Specify any necessary headers in JSON format. The API supports three types of authorization: `ALLOW-ALL`, `APP-KEY`, and `INTERNAL-BEARER-AUTHENTICATION`.
+
+        a) For `ALLOW-ALL`, the authorization header is not required.
+
+        b) For `APP-KEY` authentication, use APP-KEY as the header name.    
+        
+        c) For `INTERNAL-BEARER-AUTHENTICATION`, use INTERNAL-BEARER-AUTHENTICATION as the header name.
+
+
+<Note>
+Ensure the headers are named exactly as specified above.
+</Note>
+
+    ```jsx Sample Data
+    {
+        "APP-KEY" : "<your-app-key>", // APP-KEY.
+        "INTERNAL-BEARER-AUTHENTICATION" : "<your-bearer-token>", // INTERNAL-BEARER-AUTHENTICATION. 
+        ... // other headers
+    }
+    ```
+
+
+    - **Body Data**: Provide the body data for the request in JSON format.
+    
+    ```jsx Sample Data
+    {
+        "id" : "1",
+        "name" : "goblin"
+        ... // other data
+    }
+    ```
+    
+5. Click on the `Test API` button to execute the request.
+6. After the request is executed, the logs are generated and can be viewed on the logs page. The logs contain crucial information for debugging:
+    - **Data Size**: The size of the request and response data.
+    - **Time Execution**: The time taken to execute the API request.
+    - **Request Data**: The data sent with the request.
+    - **Response Data**: The data received in response.
+
+
+
+## Benefits 
+
+- **Enhanced Debugging**: Gain comprehensive insights into the API requests and responses for effective problem-solving.
+- **Environment Specification**: Choose the appropriate environment (dev, prod, etc.) for your test.
+- **Comprehensive Input Control**: Specify exact parameters, headers, and body data in JSON format for precise testing.
+- **Real-time Log Generation**: Instantaneously view detailed logs as the API request and response unfold.
+- **Performance Monitoring**: Monitor data size and execution time to identify performance bottlenecks.

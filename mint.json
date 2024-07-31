@@ -16,6 +16,12 @@
       "to": "#578bc9"
     }
   }, 
+
+  "analytics": {
+    "ga4": {
+        "measurementId": "G-GP1H5Y0TEP"
+    }
+  },
   "seo": {
   "indexHiddenPages": true
 },
@@ -41,6 +47,8 @@
     "name": "Get Started",
     "url": "https://zeromagic.in/"
   }, 
+ 
+
  "feedback" : {
     "suggestEdit": true,
     "raiseIssue": true,
@@ -53,7 +61,7 @@
     },
     {
       "name": "Learn",
-      "url": "learn"
+      "url": "https://zeromagic.in/"
     }
   ],
   "anchors": [
@@ -184,8 +192,7 @@
               ]
             } 
           ]
-        },
-        "restapi/manageapi",
+        }, 
         "restapi/debuglogs",
         "restapi/magic-ai-flow-generator"
       ]
