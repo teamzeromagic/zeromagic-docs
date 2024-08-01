@@ -1,5 +1,6 @@
 --- 
 title: 'Deployment'
+sidebarTitle: Deployment
 icon : "cloud"
 ---
 
@@ -16,12 +17,23 @@ Once you have created and tested your API, you are ready to deploy it.
 
 ## Access Your API
 
-Choose the environment where you want to access your API (e.g., development, staging, production).
+Choose the environment where you want to access your API (e.g., development, staging, production). For each environment, three URLs are available:
+- **REST AUTH**:  This URL handles all the authentication requests for the in-built authentication system.
+- **REST APP**: This URL is used to access the APIs you have built.
+- **GRAPHQL**: This URL is used to access the GraphQL APIs you have built.
 
-Your deployed API can be accessed using the following URL format: 
+### Example Format
 
-```jsx
-{base_url}/{app_id}/{env_name}/{api_name}
+```jsx REST AUTH
+{base_url}/auth/{app_id}/{env_name}/{api_endpoint_path}
+```
+
+```jsx REST APP
+{base_url}/api/{app_id}/{env_name}/{api_endpoint_path}
+```
+
+```jsx GRAPHQL
+{base_url}/{app_id}/{env_name}/{api_endpoint_path}/graphql
 ```
 
 - **base_url**:  The base URL provided by your platform. It remains constant across deployments.
@@ -29,16 +41,23 @@ Your deployed API can be accessed using the following URL format:
 - **env_name**: The name of the environment (e.g., dev, staging, prod).
 - **api_name**: The name you assigned to your API during the building process.
 
-### Example
 
-If your base URL is `http://localhost:8000/app/` and your App ID is `a561a95719d24f46b0640f3b342f891e`, you want to deploy to the `staging` environment, and your API name is `user-management`, your API will be accessible at:
+If your base URL is `https://magic.zeromagic.in/` and your App ID is `a561a95719d24f46b0640f3b342f891e`, you want to deploy to the `staging` environment, and your API path is `user-management/`, your API will be accessible at:
 
-```jsx
-http://localhost:8000/app/a561a95719d24f46b0640f3b342f891e/staging/user-management
+```jsx REST AUTH
+https://magic.zeromagic.in/auth/a561a95719d24f46b0640f3b342f891e/staging/user-management/
+```
+
+```jsx REST APP
+https://magic.zeromagic.in/api/a561a95719d24f46b0640f3b342f891e/staging/user-management/
+```
+
+```jsx GRAPHQL
+https://magic.zeromagic.in/a561a95719d24f46b0640f3b342f891e/staging/user-management/graphql
 ```
 
 <Note>
-You can copy the <ins>API Endpoint</ins> from the desired RestAPI/QraphQL builder page.
+You can copy the API Endpoint from the desired RestAPI/QraphQL builder page.
 </Note>
 
 
