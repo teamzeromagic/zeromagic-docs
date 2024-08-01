@@ -16,6 +16,12 @@
       "to": "#578bc9"
     }
   }, 
+
+  "analytics": {
+    "ga4": {
+        "measurementId": "G-GP1H5Y0TEP"
+    }
+  },
   "seo": {
   "indexHiddenPages": true
   },
@@ -49,6 +55,8 @@
     "name": "Get Started",
     "url": "https://zeromagic.in/"
   }, 
+ 
+
  "feedback" : {
     "suggestEdit": true,
     "raiseIssue": true,
@@ -61,10 +69,15 @@
     },
     {
       "name": "Learn",
-      "url": "learn"
+      "url": "https://zeromagic.in/"
     }
   ],
   "anchors": [
+    {
+      "name": "Magic AI",
+      "icon": "wand-magic-sparkles",
+      "url": "https://docs.zeromagic.in/basics/magic-ai"
+    },
     {
       "name": "Documentation",
       "icon": "book-open-cover",
@@ -186,9 +199,9 @@
               ]
             } 
           ]
-        },
-        "restapi/flow-builder/manageapi",
-        "restapi/flow-builder/debuglogs"
+        }, 
+        "restapi/debuglogs",
+        "restapi/magic-ai-flow-generator"
       ]
     },
     {
@@ -234,7 +247,8 @@
     {
       "group": "Materials",
       "pages": [
-        "materials/FAQs"
+        "materials/FAQs",
+        "materials/magic-ai-get-help"
       ]
     },
 
