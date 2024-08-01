@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Zeromagic",
+  "name": "Zeromagic Documentation",
   "logo": {
     "dark": "/assets/logo/dark.svg",
     "light": "/assets/logo/light.svg",
@@ -18,7 +18,15 @@
   }, 
   "seo": {
   "indexHiddenPages": true
-},
+  },
+  "metadata": {
+    "og:site_name": "Zeromagic",
+    "og:url": "https://docs.zeromagic.in",
+    "og:image": "<The URL of an image that best represents the content of your page. This is displayed as the thumbnail for the shared link>",
+    "og:logo": "<The URL of the logo of your site. This is often used by Facebook for branding purposes.>",
+    "og:image:width": "1200",
+    "og:image:height": "630"
+  },
   "search": {
     "prompt": "Search docs..."
   },
@@ -83,7 +91,7 @@
       "group": "Get Started",
       "pages": [
         "introduction",
-        "overview",
+        "magic-ai",
         "quickstart"
       ]
     },
@@ -101,8 +109,7 @@
             "basics/modules/quickstart"
           ]
         },
-        "basics/deployment",
-        "basics/magic-ai"
+        "basics/deployment"
       ]
     },
     {
