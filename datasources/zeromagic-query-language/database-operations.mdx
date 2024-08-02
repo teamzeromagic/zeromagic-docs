@@ -25,17 +25,21 @@ b) `readMany`: Retrieve multiple records based on specific criteria using `filte
 {
     "container": "student",
     "filter":{
-        "@opr" : "and/or",
-        "@sort": { "key": "name", "order": "asc" },
-        "@fields" : ["name","subject"],
-        "id": "1",
-        "age": {
-            "@gt": 20,
-        },
-        "subject" : {
-            "@in": ["science","maths"],
-        }
-    }
+            "@sort": { "key": "name", "order": "asc" },
+            "@fields" : ["id",{"name":"full_name"}, "status"],
+            "@or" : [
+                {
+                    "name" : {
+                        "@contains": "John Doe"
+                    }
+                },
+                {
+                    "status"  : {
+                        "@in": ["active", "pending"]
+                    }
+                }
+            ]
+        } 
 }
 ```
 

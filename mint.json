@@ -205,7 +205,7 @@
       ]
     },
     {
-      "group": "Datasources",
+      "group": "Databases",
       "pages": [
         "datasources/introduction",
         "datasources/quickstart",

@@ -20,12 +20,12 @@ The filter property within your Zeromagic queries provides a versatile set of op
 
 ### 1. Logical Operators
 
-`@opr`: Combine multiple filter conditions using the logical AND (`and`) or OR (`or`) operators within this property.
+`@and`, `@or`: Combine multiple filter conditions using the logical AND (`and`) or OR (`or`) operators within this property.
 
 ```jsx
-"@opr" : "and"
+"@and" : [ {"key1" : "val1"},{"key2" : "val2"} ]
     (or)
-"@opr" : "or"
+"@or" : [ {"key1" : "val1"},{"key2" : "val2"} ]
 ```
 
 ### 2. Sorting Operators
@@ -40,83 +40,99 @@ The filter property within your Zeromagic queries provides a versatile set of op
 
 ### 3. Field Selection
 
-`@fields`: Define a list of fields `["<field_1>", "<field_2>", "<field_3>"]` you want to retrieve from the records.
+`@fields`: Define a list of fields `["<field_1>", "<field_2>", "<field_3>"]` you want to retrieve from the records. To represent aliases for a return field, provide input field as `[{"<field_1>":"alias"}]`.
 
-```jsx
+```json
+//retrieve specific fields
 "@fields" : ["id","name","price","status"],
+
+//retrieve specific fields with alias
+"@fields" : [{"name":"full_name"}]
 ```
+Here, `name` is the original field and `full_name` is the alias name. So output will be like `{"full_name":"Zeromagic"}` instead of `{"name":"Zeromagic"}`. This is useful when you want to change the field name in the output.
+
 
 ### 4. Comparison Operators:
 
 `@eq`: Exact equality check
 
 ```jsx
+// Returns records where the name is exactly "Max"
 "name": { "@eq": "Max" }
 ```
 
 `@ne`: Not equal check
 
 ```jsx
+// Returns records where the name is not "Max"
 "name": { "@ne": "Max" }
 ```
 
 `@gt`: Greater than comparison
 
 ```jsx
+// Returns records where the price is greater than 100
 "price": { "@gt": 100 }
 ```
 
 `@lt`: Less than comparison
 
 ```jsx
+// Returns records where the price is less than 100
 "price": { "@lt": 100 }
 ```
 
 `@gte`: Greater than or equal to comparison.
 
 ```jsx
+// Returns records where the price is greater than or equal to 120
 "price": { "@gte": 120 }
 ```
 
 `@lte`: Less than or equal to comparison.
 
 ```jsx
+// Returns records where the price is less than or equal to 120
 "price": { "@lte": 120 }
 ```
+
 
 ### 5. String Matching:
 
 `@contains`: Check if a string contains a specific substring.
 
 ```jsx
+// Returns records where the name contains "John Doe"
 "name": { "@contains": "John Doe" }
 ```
 
 `@startswith`: Check if a string starts with a specific prefix.
 
 ```jsx
+// Returns records where the name starts with "John"
 "name": { "@startswith": "John" }
 ```
 
 `@in`: Check if a value is within a provided list.
 
 ```jsx
+// Returns records where the status is in "active" or "pending"
 "status": { "@in": ["active", "pending"] }
 ```
 
 `@nin`: Check if a value is not within a provided list.
 
 ```jsx
+// Returns records where the status is not in "active" or "pending"
 "status": { "@nin": ["active", "pending"] }
 ```
 
 ### Sample Filter Query
 
-```jsx title="Example"
+```jsx Query-1
 {
 "container" : "ecommerce",
 "filter" : {
-        "@opr" : "and",
         "@sort": { "key": "name", "order": "asc" },
         "@fields" : ["id","name","price" , "status"],
         "id": "1",
@@ -133,10 +149,42 @@ The filter property within your Zeromagic queries provides a versatile set of op
             "@ne": "Max",
         },
         "status"  : {
-       "@in": ["active", "pending"],
-       "@nin": ["active", "pending"] 
+        "@in": ["active", "pending"],
+        "@nin": ["active", "pending"] 
         }
     } 
+}
+```
+
+```jsx Query-2
+{
+    "container" : "ecommerce",
+    "filter" : {
+            "@sort": { "key": "name", "order": "asc" },
+            "@fields" : ["id",{"name":"full_name"},{"price" : "cost_price"} , "status"],
+            "@and" : [
+                {
+                    "id": "1"
+                },
+                {
+                    "price": {
+                        "@gt": 20
+                    }
+                }
+            ],
+            "@or" : [
+                {
+                    "name" : {
+                        "@contains": "John Doe"
+                    }
+                },
+                {
+                    "status"  : {
+                        "@in": ["active", "pending"]
+                    }
+                }
+            ]
+        } 
 }
 ```
 
@@ -162,6 +210,18 @@ The filter property within your Zeromagic queries provides a versatile set of op
 } // single item to create
 ```
 
+```jsx Create single item Query
+//Query to create a single item in the employee container
+{
+    "container" : "employee",
+    "item": {
+        "name": "John Doe",
+        "email": "john.doe@example.com"
+    }
+}
+```
+
+
 ### 3. Items Property: (Required for `createMany` method)
 
 `items`: Contains an array of multiple items to be created within a data container. This property allows developers to create multiple data records simultaneously, streamlining the data creation process.
@@ -177,6 +237,24 @@ The filter property within your Zeromagic queries provides a versatile set of op
   "email": "max.well@example.com"
 }
 ]   // multiple item to create
+```
+
+```jsx Create multiple items Query
+//Query to create multiple items in the employee container
+{
+    "container" : "employee",
+    "items": [
+        {
+            "name": "John Doe",
+            "email": "john.doe@example.com"
+        } , 
+        {
+            "name": "Max Well",
+            "email": "max.well@example.com"
+        }       
+    ]
+}
+
 ```
 
 ### 4. Update Property: (Required for `updateOne` and `updateMany` method)
