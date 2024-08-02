@@ -161,37 +161,33 @@
           "pages": [
             "restapi/flow-builder/introduction",
             {
-              "group": "Blocks",
+              "group": "Action Blocks",
               "pages": [
-                {
-                  "group": "Action Blocks",
-                  "pages": [
-                    "restapi/flow-builder/blocks/action-blocks/declare-variable",
-                    "restapi/flow-builder/blocks/action-blocks/build-json",
-                    "restapi/flow-builder/blocks/action-blocks/http-response"
-                  ]
-                },
-                {
-                  "group": "Database Blocks",
-                  "pages": [
-                    "restapi/flow-builder/blocks/database-blocks/create-records",
-                    "restapi/flow-builder/blocks/database-blocks/read-records",
-                    "restapi/flow-builder/blocks/database-blocks/update-records",
-                    "restapi/flow-builder/blocks/database-blocks/delete-records", 
-                    "restapi/flow-builder/blocks/database-blocks/custom-query"
-                  ]
-                },
-                {
-                  "group": "Flow Control Blocks",
-                  "pages": [
-                    "restapi/flow-builder/blocks/flow-control/if-else",
-                    "restapi/flow-builder/blocks/flow-control/for-loop",
-                    "restapi/flow-builder/blocks/flow-control/for-loop-items",
-                    "restapi/flow-builder/blocks/flow-control/switch-case"
-                  ]
-                }
+                "restapi/flow-builder/action-blocks/declare-variable",
+                "restapi/flow-builder/action-blocks/build-json",
+                "restapi/flow-builder/action-blocks/http-response"
               ]
-            } 
+            },
+            {
+              "group": "Database Blocks",
+              "pages": [
+                "restapi/flow-builder/database-blocks/create-records",
+                "restapi/flow-builder/database-blocks/read-records",
+                "restapi/flow-builder/database-blocks/update-records",
+                "restapi/flow-builder/database-blocks/delete-records", 
+                "restapi/flow-builder/database-blocks/custom-query"
+              ]
+            },
+            {
+              "group": "Flow Control Blocks",
+              "pages": [
+                "restapi/flow-builder/flow-control/if-else",
+                "restapi/flow-builder/flow-control/for-loop",
+                "restapi/flow-builder/flow-control/for-loop-items",
+                "restapi/flow-builder/flow-control/switch-case"
+              ]
+            },
+            "restapi/flow-builder/environment-variables"
           ]
         }, 
         "restapi/debuglogs",
@@ -221,12 +217,6 @@
             "datasources/zeromagic-query-language/database-operations"
           ]
         }
-      ]
-    },
-    {
-      "group": "Variables",
-      "pages": [
-        "variables/environment-variables"
       ]
     },
     {
@@ -270,7 +260,8 @@
       "group": "Learn",
       "pages": [
         "learn/introduction",
-        "learn/what-is-rest-api"
+        "learn/what-is-rest-api",
+        "learn/what-is-graphql"
       ]
     },
     {

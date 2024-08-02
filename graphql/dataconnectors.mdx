@@ -27,11 +27,11 @@ When you click on a specific data source, you'll be prompted to a `Data Manager 
 
 - __Listed:__ Shows all the tables which have logical models that are listed in that data source.
 
-![listed-tables](/assets/images/listed-tables.png)
+{/* ![listed-tables](/assets/images/listed-tables.png) */}
 
 - __Not Listed:__ Shows all the tables which are not listed within that data source.
 
-![notlisted-tables](/assets/images/notlisted-tables.png)
+{/* ![notlisted-tables](/assets/images/notlisted-tables.png) */}
 
 ### 3. Creating Logical Models
 
@@ -43,12 +43,15 @@ Logical models represent the structure and relationships of your data, enabling 
 
 - **Create Logical Model:** Create the logical model to generate the corresponding schema
 
+<Note>
+Each Logical model must have a primary key field.
+</Note>
 
 ![logical-model](/assets/images/logical-model.png)
 
 ### 4. Schema Generation 
 
-Once a logical model is created, the system automatically generates the GraphQL schema for mutations and queries based on the model. This schema allows you to perform CRUD (Create, Read, Update, Delete) operations on the data through the GraphQL API.
+Once a logical model is created, the system automatically generates the GraphQL schema for mutations and queries based on the model. This schema allows you to interact with your data through the GraphQL endpoint instantly, without the need for manual schema generation.
  
 ### 5. Edit logical model
 
