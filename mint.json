@@ -69,7 +69,7 @@
     },
     {
       "name": "Learn",
-      "url": "https://zeromagic.in/"
+      "url": "learn"
     }
   ],
   "anchors": [
@@ -152,7 +152,7 @@
       ]
     },
     {
-      "group": "Restful",
+      "group": "Rest",
       "pages": [
         "restapi/overview",
         "restapi/quickstart",
@@ -264,7 +264,21 @@
         "blog/using-for-loops-with-items-in-workflows-for-sending-promotional-sms-messages",
         "blog/managing-deployment-using-environments-in-zeromagic"
       ]
-    } 
+    },
+    
+    {
+      "group": "Learn",
+      "pages": [
+        "learn/introduction",
+        "learn/what-is-rest-api"
+      ]
+    },
+    {
+      "group": "Tutorial",
+      "pages": [
+        "learn/tutorials/introduction"
+      ]
+    }
   ],
   "footerSocials": {
     "x": "https://x.com/mintlify",

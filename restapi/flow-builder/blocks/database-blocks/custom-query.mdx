@@ -23,12 +23,11 @@ The Zeromagic Query Language is a JSON-based query language specifically designe
 {
   "container": "<container_name>",
   "filter": {
-    "@opr": "<and/or>",
     "@sort": {
       "key": "<field_name>",
       "order": "<asc/desc>"
     },
-    "@fields": ["<field_name_1>", "<field_name_2>"],
+    "@fields": ["<field_name_1>", "<field_name_2>",{"alias_name": "<field_name_3>"}],
     "<field_name_1>": {
       "@contains": "<substring>",
       "@startswith": "<prefix>",
@@ -40,7 +39,31 @@ The Zeromagic Query Language is a JSON-based query language specifically designe
       "@lt": "<integer>",
       "@gte": "<integer>",
       "@lte": "<integer>"
-    }
+    },
+    "@and":[
+      {
+        "<field_name_1>": {
+          "@eq": "<value>"
+        }
+      },
+      {
+        "<field_name_2>": {
+          "@gt": "<integer>"
+        }
+      }
+    ],
+    "@or":[
+      {
+        "<field_name_1>": {
+          "@eq": "<value>"
+        }
+      },
+      {
+        "<field_name_2>": {
+          "@gt": "<integer>"
+        }
+      }
+    ],
   }
 }
 ```

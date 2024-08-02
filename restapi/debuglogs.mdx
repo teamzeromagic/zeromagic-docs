@@ -29,18 +29,17 @@ Here’s how you can utilize this feature to optimize your API testing and debug
         
         c) For `INTERNAL-BEARER-AUTHENTICATION`, use INTERNAL-BEARER-AUTHENTICATION as the header name.
 
+    <Note>
+    Ensure the headers are named exactly as specified above.
+    </Note>
 
-<Note>
-Ensure the headers are named exactly as specified above.
-</Note>
-
-    ```jsx Sample Data
-    {
-        "APP-KEY" : "<your-app-key>", // APP-KEY.
-        "INTERNAL-BEARER-AUTHENTICATION" : "<your-bearer-token>", // INTERNAL-BEARER-AUTHENTICATION. 
-        ... // other headers
-    }
-    ```
+        ```jsx Sample Data
+        {
+            "APP-KEY" : "<your-app-key>", // APP-KEY.
+            "INTERNAL-BEARER-AUTHENTICATION" : "<your-bearer-token>", // INTERNAL-BEARER-AUTHENTICATION. 
+            ... // other headers
+        }
+        ```
 
 
     - **Body Data**: Provide the body data for the request in JSON format.
@@ -59,7 +58,6 @@ Ensure the headers are named exactly as specified above.
     - **Time Execution**: The time taken to execute the API request.
     - **Request Data**: The data sent with the request.
     - **Response Data**: The data received in response.
-
 
 
 ## Benefits 

@@ -27,26 +27,38 @@ To access a particular object from a collection(array of objects) you can access
 
 ```jsx Example
 // sample collection
-collections = [
+collectionsBlock = [
     {
-        name : "Rohith",
-        age : 21
-        city : "Chennai",
-    },
-    {
-        name : "Revanth",
-        age : 21
-        city : "Banglore",
-    },
-    {
-        name : "Aravind",
-        age : 22
-        city : "Mumbai",
+        name: "Zeromagic",
+        services : ["RestAPI","GraphQL"],
+        founder : [
+            {
+                name : "Revanth",
+                city : "Chennai",
+                linkedin : "https://www.linkedin.com/in/revanth-nd-09/"
+            },
+            {
+                name : "Rohith",
+                city : "Chennai",
+                linkedin : "https://www.linkedin.com/in/rohith-nd/"
+            },
+            {
+                name : "Aravind",
+                city : "Chennai",
+                linkedin : "https://www.linkedin.com/in/aravind--swaminathan/"
+            }
+        ]
     }
 ]
 
-// access current object inside Forloop 
-{{$forLoop.val.name}}
+// access "Zeromagic" from collections
+{{$collectionsBlock.val.name}}
+
+//access "Revanth" from collections
+{{$collectionsBlock.val.founder[0].name}}
+
+//access "RestAPI" from collections
+{{$collectionsBlock.val.services[0]}}
 
 ```
 
