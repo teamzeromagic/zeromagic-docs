@@ -14,10 +14,10 @@ To setup and get `connection_name` of your preferrred social connection, check i
 <Note> 
 CALLBACK URL
 
-Make sure to configure the below given call back URL in the third party service `https://localhost:8000/oauth/callback/`
+Make sure to configure the below given call back URL in the third party service `https://auth.zeromagic.in/oauth/callback/`
 </Note>
 
-## Step - 2 : Get Authorisation Page URL
+## Step - 2 : GET Authorisation Page URL
 You will need to redirect the user to preferred social provider page to grant access to your application. You can get this authorize url from the below endpoint. On opening the `authorize_url` link, it will display a page asking the user to approve or deny access to your application. However, if you provide an invalid config credentials or redirect_uri then the user will instead see an error page.
 
 
@@ -111,7 +111,7 @@ It is necessary to add your **client application in oauth redirect uri** under p
   </Accordion>
 
 The output response will be in the format of `{client_oauth_redirect_uri}?{success_params}`
-For example, if your client_oauth_redirect_uri is **https://zeromagic.in/** then success response will be in the format of
+For example, if your client_oauth_redirect_uri is **https://client.zeromagic.in/** then success response will be in the format of
 
 ```jsx
 https://client.zeromagic.in/?user_id=&access_token=&token_type=&expires_in=

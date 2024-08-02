@@ -1,7 +1,8 @@
---- 
+---
 title: 'Modules'
-# description: Modules Introduction!   
-icon: "circle-info"
+sidebarTitle: Modules
+# description:   
+icon : "webhook"
 ---
 
 import GraphQLCard from '/snippets/graphql-card.mdx';
@@ -9,6 +10,22 @@ import GraphQLCard from '/snippets/graphql-card.mdx';
 Zeromagic empowers you to create well-organized and scalable APIs using a **modular approach**. This means you can break down your project functionalities into smaller, independent units called modules. Each module can be independently developed, tested, and deployed, promoting efficient API development and maintenance.
 
 Within your newly created module, you can define specific API routes **(RESTful or GraphQL)** that expose functionalities related to the module's purpose.
+
+
+## Create Module
+
+- To create a new module, head to the **SERVICES** section in the **project console**. 
+
+![sidebar-module](/assets/images/sidebar-module.png)
+
+- Click `Rest API` or `GraphQL` and this will typically launch a form to define your module's details.
+- Enter a `name` and `api path` that identifies the purpose and functionality of this module (e.g., "payments/," "product-catalog/").
+
+![module-details](/assets/images/module-details.png)
+
+- Click on `Create Module` and your module will be created.
+
+- Once created, you can start adding API routes and GraphQL APIs to the module as needed.
 
 --- 
 ## Supported API Architecture
@@ -23,3 +40,4 @@ Within your newly created module, you can define specific API routes **(RESTful 
   </Card>
    <GraphQLCard />
 </CardGroup>
+

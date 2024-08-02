@@ -115,13 +115,7 @@
         "basics/project",
         "basics/environment",
         "basics/secrets",
-        {
-          "group": "Modules", 
-          "pages": [ 
-            "basics/modules/introduction",
-            "basics/modules/quickstart"
-          ]
-        },
+        "basics/modules",
         "basics/deployment"
       ]
     },
@@ -232,8 +226,7 @@
     {
       "group": "Variables",
       "pages": [
-        "variables/environment-variables",
-        "variables/operations"
+        "variables/environment-variables"
       ]
     },
     {
