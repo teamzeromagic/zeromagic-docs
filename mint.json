@@ -64,12 +64,12 @@
  },
   "tabs": [
     {
-      "name": "Blog",
-      "url": "blog"
-    },
-    {
       "name": "Learn",
       "url": "learn"
+    },
+    {
+      "name": "Blog",
+      "url": "blog"
     }
   ],
   "anchors": [
@@ -257,17 +257,38 @@
     },
     
     {
-      "group": "Learn",
-      "pages": [
-        "learn/introduction",
-        "learn/what-is-rest-api",
-        "learn/what-is-graphql"
-      ]
-    },
-    {
       "group": "Tutorial",
       "pages": [
-        "learn/tutorials/introduction"
+        "learn/introduction",
+        {
+          "group": "Concepts",
+          "pages": [
+            "learn/what-is-rest-api",
+            "learn/what-is-graphql",
+            "learn/what-is-azure-cosmosdb"
+          ]
+        },
+        {
+          "group": "Authentication",
+          "pages": [
+            "learn/what-is-rest-api",
+            "learn/what-is-graphql"
+          ]
+        },
+        {
+          "group": "REST",
+          "pages": [
+            "learn/what-is-rest-api",
+            "learn/what-is-graphql"
+          ]
+        },
+        {
+          "group": "GraphQL",
+          "pages": [
+            "learn/what-is-rest-api",
+            "learn/what-is-graphql"
+          ]
+        }
       ]
     }
   ],
