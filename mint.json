@@ -271,7 +271,8 @@
         {
           "group": "Authentication",
           "pages": [
-            "learn/authentication/authentication-html-js"
+            "learn/authentication/email-password-authentication-with-html-js",
+            "learn/authentication/email-password-authentication-with-flutter"
           ]
         },
         {
