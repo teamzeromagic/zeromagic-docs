@@ -271,8 +271,7 @@
         {
           "group": "Authentication",
           "pages": [
-            "learn/what-is-rest-api",
-            "learn/what-is-graphql"
+            "learn/authentication/authentication-html-js"
           ]
         },
         {
@@ -284,6 +283,13 @@
         },
         {
           "group": "GraphQL",
+          "pages": [
+            "learn/what-is-rest-api",
+            "learn/what-is-graphql"
+          ]
+        },
+        {
+          "group": "Applications",
           "pages": [
             "learn/what-is-rest-api",
             "learn/what-is-graphql"
