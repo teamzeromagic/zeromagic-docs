@@ -91,12 +91,12 @@
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "http://docs.zeromagic.in/blog/introduction"
+      "url": "http://docs.zeromagic.in/blog"
     },
     {
       "name": "Learn",
       "icon": "graduation-cap",
-      "url": "http://docs.zeromagic.in/blog/introduction"
+      "url": "http://docs.zeromagic.in/learn"
     }
   ],
   "navigation": [
@@ -272,6 +272,7 @@
           "group": "Authentication",
           "pages": [
             "learn/authentication/email-password-authentication-with-html-js",
+            "learn/authentication/email-password-authentication-with-reactjs",
             "learn/authentication/email-password-authentication-with-flutter"
           ]
         },
