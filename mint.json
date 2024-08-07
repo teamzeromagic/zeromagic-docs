@@ -288,13 +288,6 @@
             "learn/what-is-rest-api",
             "learn/what-is-graphql"
           ]
-        },
-        {
-          "group": "Applications",
-          "pages": [
-            "learn/what-is-rest-api",
-            "learn/what-is-graphql"
-          ]
         }
       ]
     }
