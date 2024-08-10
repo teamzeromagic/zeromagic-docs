@@ -56,12 +56,12 @@ The response with **201 CREATED** status code represents that user is created an
 #### Example
 
 ```jsx Request
-POST https://api.zeromagic.in/auth/353d1499ab5149e194a53cf0f6c837f4/development/email-otp-signup 
+POST https://api.zeromagic.cloud/auth/353d1499ab5149e194a53cf0f6c837f4/development/email-otp-signup 
 HTTP/1.1
 APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
 
 {
-    "email":"user@zeromagic.in"
+    "email":"user@zeromagic.cloud"
 }
 ```
  
@@ -71,7 +71,7 @@ HTTP/1.1
 
 {
     "user_id": "1",
-    "email":"user@zeromagic.in"
+    "email":"user@zeromagic.cloud"
 }
 ```
 
@@ -118,12 +118,12 @@ The response with **200 OK** status code represents that the OTP is sent to the 
 #### Example
  
 ```jsx Request
-POST https://api.zeromagic.in/auth/353d1499ab5149e194a53cf0f6c837f4/development/email-otp-login 
+POST https://api.zeromagic.cloud/auth/353d1499ab5149e194a53cf0f6c837f4/development/email-otp-login 
 HTTP/1.1
 APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
 
 {
-    "email":"user@zeromagic.in"
+    "email":"user@zeromagic.cloud"
 }
 ```
   
@@ -134,7 +134,7 @@ HTTP/1.1
 
 {
     "user_id": "1",
-    "email":"user@zeromagic.in"
+    "email":"user@zeromagic.cloud"
 }
 ```
 
@@ -196,12 +196,12 @@ POST the data in the **application/json** format.
 #### Example
 
 ```jsx Request
-POST https://api.zeromagic.in/auth/353d1499ab5149e194a53cf0f6c837f4/development/email-otp-login 
+POST https://api.zeromagic.cloud/auth/353d1499ab5149e194a53cf0f6c837f4/development/email-otp-login 
 HTTP/1.1
 APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
 
 {
-    "email":"user@zeromagic.in"
+    "email":"user@zeromagic.cloud"
     "otp_code" : 1234
 }
 ```
@@ -212,7 +212,7 @@ HTTP/1.1
 
 {
    "user_id": "1",
-   "email":"user@zeromagic.in"
+   "email":"user@zeromagic.cloud"
    "access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIzNDU2Nzg5LCJuYW1lIjoiSm9zZXBoIn0.OpOSSw7e485LOP5PrzScxHb7SR6sAOMRckfFwi4rp7o",
    "token_type" :"bearer",
    "expires_in" : null

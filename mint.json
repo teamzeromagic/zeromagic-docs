@@ -4,7 +4,7 @@
   "logo": {
     "dark": "/assets/logo/dark.svg",
     "light": "/assets/logo/light.svg",
-    "href": "https://zeromagic.in/"
+    "href": "https://zeromagic.cloud/"
   },
   "favicon": "/assets/logo/logo.svg",
   "colors": {
@@ -27,7 +27,7 @@
   },
   "metadata": {
     "og:site_name": "Zeromagic",
-    "og:url": "https://docs.zeromagic.in",
+    "og:url": "https://docs.zeromagic.cloud",
     "og:image": "<The URL of an image that best represents the content of your page. This is displayed as the thumbnail for the shared link>",
     "og:logo": "<The URL of the logo of your site. This is often used by Facebook for branding purposes.>",
     "og:image:width": "1200",
@@ -40,20 +40,20 @@
     
     {
       "name": "Pricing",
-      "url": "mailto:ndrohith@zeromagic.in"
+      "url": "mailto:ndrohith@zeromagic.cloud"
     },
     {
       "name": "Support",
-      "url": "mailto:ndrohith@zeromagic.in"
+      "url": "mailto:ndrohith@zeromagic.cloud"
     },
     {
       "name": "Community",
-      "url": "mailto:ndrohith@zeromagic.in"
+      "url": "mailto:ndrohith@zeromagic.cloud"
     }
   ],
   "topbarCtaButton": {
     "name": "Get Started",
-    "url": "https://zeromagic.in/"
+    "url": "https://zeromagic.cloud/"
   }, 
  
 
@@ -76,27 +76,27 @@
     {
       "name": "Magic AI",
       "icon": "wand-magic-sparkles",
-      "url": "https://docs.zeromagic.in/basics/magic-ai"
+      "url": "https://docs.zeromagic.cloud/basics/magic-ai"
     },
     {
       "name": "Documentation",
       "icon": "book-open-cover",
-      "url": "https://docs.zeromagic.in/introduction"
+      "url": "https://docs.zeromagic.cloud/introduction"
     },
     {
       "name": "Community",
       "icon": "slack",
-      "url": "https://docs.zeromagic.in/introduction"
+      "url": "https://docs.zeromagic.cloud/introduction"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "http://docs.zeromagic.in/blog"
+      "url": "http://docs.zeromagic.cloud/blog"
     },
     {
       "name": "Learn",
       "icon": "graduation-cap",
-      "url": "http://docs.zeromagic.in/learn"
+      "url": "http://docs.zeromagic.cloud/learn"
     }
   ],
   "navigation": [
@@ -269,7 +269,7 @@
           ]
         },
         {
-          "group": "Authentication",
+          "group": "Basic Authentication",
           "pages": [
             "learn/authentication/email-password-authentication-with-html-js",
             "learn/authentication/email-password-authentication-with-reactjs",
@@ -277,17 +277,9 @@
           ]
         },
         {
-          "group": "REST",
+          "group": "Social Authentication",
           "pages": [
-            "learn/what-is-rest-api",
-            "learn/what-is-graphql"
-          ]
-        },
-        {
-          "group": "GraphQL",
-          "pages": [
-            "learn/what-is-rest-api",
-            "learn/what-is-graphql"
+            "learn/authentication/google-oauth-with-reactjs"
           ]
         }
       ]

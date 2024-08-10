@@ -14,7 +14,7 @@ To setup and get `connection_name` of your preferrred social connection, check i
 <Note> 
 CALLBACK URL
 
-Make sure to configure the below given call back URL in the third party service `https://auth.zeromagic.in/oauth/callback/`
+Make sure to configure the below given call back URL in the third party service `https://auth.zeromagic.cloud/oauth/callback/`
 </Note>
 
 ## Step - 2 : GET Authorisation Page URL
@@ -55,7 +55,7 @@ POST the data in the **application/json** format.
 #### Example
 
 ```jsx Request
-POST https://api.zeromagic.in/auth/353d1499ab5149e194a53cf0f6c837f4/development/oauth 
+POST https://api.zeromagic.cloud/auth/353d1499ab5149e194a53cf0f6c837f4/development/oauth 
 HTTP/1.1
 APP-KEY : ldM6yPAAE3PRTZbHXrjqGGzZY2Yjm7GwjAyjbNqWH48
 
@@ -111,25 +111,25 @@ It is necessary to add your **client application in oauth redirect uri** under p
   </Accordion>
 
 The output response will be in the format of `{client_oauth_redirect_uri}?{success_params}`
-For example, if your client_oauth_redirect_uri is **https://client.zeromagic.in/** then success response will be in the format of
+For example, if your client_oauth_redirect_uri is **https://client.zeromagic.cloud/** then success response will be in the format of
 
 ```jsx
-https://client.zeromagic.in/?user_id=&access_token=&token_type=&expires_in=
+https://client.zeromagic.cloud/?user_id=&access_token=&token_type=&expires_in=
 ```
 
 #### Success Response Example
 
 ```jsx Success Response
-GET https://client.zeromagic.in/?user_id=1&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIzNDU2Nzg5LCJuYW1lIjoiSm9zZXBoIn0.OpOSSw7e485LOP5PrzScxHb7SR6sAOMRckfFwi4rp7o&token_type=bearer&expires_in=null
+GET https://client.zeromagic.cloud/?user_id=1&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIzNDU2Nzg5LCJuYW1lIjoiSm9zZXBoIn0.OpOSSw7e485LOP5PrzScxHb7SR6sAOMRckfFwi4rp7o&token_type=bearer&expires_in=null
 HTTP/1.1 
 ```
 
 #### Error Response Example
 
-The error message is also appended to the redirect uri as query params.The error message will be in the format of `https://client.zeromagic.in/?error=&message=&code=&state=`
+The error message is also appended to the redirect uri as query params.The error message will be in the format of `https://client.zeromagic.cloud/?error=&message=&code=&state=`
 
 ```jsx Error Response
-GET https://client.zeromagic.in/?error=error&message=message&code=error_code&state=gAAAAABmIWikfuZW6M2N5P6aGiL7wZOp1D_wCC2aIP4nlqFmVjS7KhHByd5zJjK_BpFeAc8yj24CDDmCtgC4MV1bATWEKzmkLw%3D%3D
+GET https://client.zeromagic.cloud/?error=error&message=message&code=error_code&state=gAAAAABmIWikfuZW6M2N5P6aGiL7wZOp1D_wCC2aIP4nlqFmVjS7KhHByd5zJjK_BpFeAc8yj24CDDmCtgC4MV1bATWEKzmkLw%3D%3D
 HTTP/1.1 
 ```
 
