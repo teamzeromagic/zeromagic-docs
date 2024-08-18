@@ -15,30 +15,61 @@ It is mandatory to add OAuth Redirect Uri for your social authentication method 
 
 ![project-console](/assets/images/project-console.png)
 
-**Step-2 :** Add your Client Application Url in **OAuth Redirect Uri** under your project settings.
+**Step-2 :** Add your Client Application Url in **OAuth Redirect Uri** under your project settings. Here we are adding `http://localhost:3000/dashboard` as our client application url. You can add your client application url endpoint path where you want to receive your success response.
 
-![project-console](/assets/images/project-console.png)
+![Redirect URL](/assets/learn/authentication-add-googleoauth-setup.png)
 
+> Note : The access_token and other user details will be appended as query params in your client application url. You can parse this response in your client application.
 
 ## Create Social Connection
 You can start creating connection within just few clicks. Follow the steps below steps to start creating a connection.
 
 ### Connection 1: Google Auth
 
-- Navigate to the Providers tab and select `Google`. This action will prompt the configuration form to appear.
-- Enter your `Client ID` and `Client Secret` of the [Google OAuth](https://support.google.com/cloud/answer/6158849).
-- Add the Callback Url in your third party developer application. Get the [Oauth Callback Url here](/authentication/methods/social#oauth-callback-url)
+1. Go to the Google Developers Console and [Create a new project](https://console.cloud.google.com/projectcreate).
 
+    ![Create a new project](/assets/learn/googleoauth-setup-project-create.png)
 
-![connection-google](/assets/images/connection-google.png)
+2. Click on the project name and then select `APIs & Services` on your left sidebar tab. Click on `OAuth consent screen` and fill in the required details.
 
-- Click on `Add Connection` to easily link your connection to the platform with just a single click.
+    ![OAuth consent screen](/assets/learn/googleoauth-setup-oauthconsent-1.png)
 
-![connection-google](/assets/images/connection-google.png)
+    <Note>
+    IMPORTANT
 
-- Once you created a new connection, click on the newly created connection in your `Connections` tab. You can get your `connection_name` in that configurations tab. This `connection_name` will be used to make an api calls from your client application.
+    **Test users**: While your app is in development, you can add test users to your OAuth consent screen. **These users will be able to sign in to your app with their Google accounts** without needing to verify their identity. You can add test users by clicking on the `Add users` button in the OAuth consent screen configuration page.
 
-![connection-google](/assets/images/connection-google.png)
+    > You will need to verify and move your app to production before it can be used by anyone other than the test users you have added.
+    </Note>
+
+    ![OAuth consent screen](/assets/learn/googleoauth-setup-oauthconsent-2.png)
+
+3. Click on `Credentials` on your left sidebar tab and then click on `Create Credentials` and select `OAuth client ID`.
+    
+    ![Create Credentials](/assets/learn/googleoauth-setup-create-credentials.png)
+
+    <Note>
+    SERVER CONFIGURATIONS
+
+    Application URL - http://localhost:3000
+        > We are using `http://localhost:3000` as the frontend application URL in **Authorized origins**. You can replace it with your actual ReactJS application URL when rolling out to production. Example: `https://your-reactjs-app.com`
+
+    Oauth Callback or Authorized Redirect URI - https://auth.zeromagic.cloud/oauth/callback/
+    </Note>
+
+4. Copy the `Client ID` and `Client Secret` and we will use this to setup our authentication in the zeromagic platform.
+
+5. Add the `Google` authentication connection under Methods. Click `Add Connection` to create a new connection with the `Client ID` and `Client Secret` you copied from the Google Developers Console. 
+
+    ![Add Authentication](/assets/learn/authentication-add-googleoauth.png)
+
+6. Now, go to `Environments` sections and select the environment you created. Copy the `Auth Endpoint URL` from the environment details. This is your authentication endpoint URL where you will be sending the APi requests. Your Auth endpoint URL looks similar to this:
+
+    The oauth api endpath is **/oauth** and environment url **http://auth.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/**. So, the final URL will be 
+
+    ```curl OAuth Endpoint
+    http://auth.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/oauth  
+    ```
 
 
 ## Supported Social Providers
@@ -54,5 +85,5 @@ The list of supported social authentication methods
 Make sure to configure the below given call back URL in the third party service
 
 <Note>
-Callback url : `https://auth.zeromagic.in/oauth/callback/`
+Callback url : `https://auth.zeromagic.cloud/oauth/callback/`
 </Note>
