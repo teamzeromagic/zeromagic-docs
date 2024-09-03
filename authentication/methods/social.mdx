@@ -54,7 +54,7 @@ You can start creating connection within just few clicks. Follow the steps below
     Application URL - http://localhost:3000
         > We are using `http://localhost:3000` as the frontend application URL in **Authorized origins**. You can replace it with your actual ReactJS application URL when rolling out to production. Example: `https://your-reactjs-app.com`
 
-    Oauth Callback or Authorized Redirect URI - https://auth.zeromagic.cloud/oauth/callback/
+    Oauth Callback or Authorized Redirect URI - https://authn.zeromagic.cloud/oauth/callback/
     </Note>
 
 4. Copy the `Client ID` and `Client Secret` and we will use this to setup our authentication in the zeromagic platform.
@@ -65,10 +65,10 @@ You can start creating connection within just few clicks. Follow the steps below
 
 6. Now, go to `Environments` sections and select the environment you created. Copy the `Auth Endpoint URL` from the environment details. This is your authentication endpoint URL where you will be sending the APi requests. Your Auth endpoint URL looks similar to this:
 
-    The oauth api endpath is **/oauth** and environment url **http://auth.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/**. So, the final URL will be 
+    The oauth api endpath is **/oauth** and environment url **http://authn.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/**. So, the final URL will be 
 
     ```curl OAuth Endpoint
-    http://auth.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/oauth  
+    http://authn.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/oauth  
     ```
 
 
@@ -85,5 +85,5 @@ The list of supported social authentication methods
 Make sure to configure the below given call back URL in the third party service
 
 <Note>
-Callback url : `https://auth.zeromagic.cloud/oauth/callback/`
+Callback url : `https://authn.zeromagic.cloud/oauth/callback/`
 </Note>

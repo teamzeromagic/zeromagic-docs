@@ -38,7 +38,7 @@ In this tutorial, we will learn how to implement Google OAuth2.0 authentication 
     ReactJS - http://localhost:3000
         > We are using `http://localhost:3000` as the ReactJS application URL for this tutorial in **Authorized origins**. You can replace it with your actual ReactJS application URL when rolling out to production. Example: `https://your-reactjs-app.com`
 
-    Oauth Callback or Authorized Redirect URI - https://auth.zeromagic.cloud/oauth/callback/
+    Oauth Callback or Authorized Redirect URI - https://authn.zeromagic.cloud/oauth/callback/
     </Note>
 
 4. Copy the `Client ID` and `Client Secret` and we will use this to setup our authentication in the zeromagic platform.
@@ -70,10 +70,10 @@ This is the url where the user data response with be appended to the query param
 
 5. Now, go to `Environments` sections and select the environment you created. Copy the `Auth Endpoint URL` from the environment details. This is your authentication endpoint URL where you will be sending the APi requests. Your Auth endpoint URL looks similar to this:
 
-    The oauth api endpath is **/oauth** and environment url **http://auth.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/**. So, the final URL will be 
+    The oauth api endpath is **/oauth** and environment url **http://authn.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/**. So, the final URL will be 
 
     ```curl OAuth Endpoint
-    http://auth.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/oauth  
+    http://authn.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/oauth  
     ```
 
 6. Before making the API request, let's **create a new user credentials** in the database for this example. You can **skip this step if your preferring to go with registering the user** and login with that user credentials. 
@@ -291,7 +291,7 @@ npx create-react-app googleauth-reactjs
 
 ## Step-4 : Make the API Request 
 1. Replace the `{auth_base_url}/oauth` in the `login.js` file with the copied URL from the environment details and with the path to the social google login endpoint. 
-Here the `{auth_base_url}` is `http://auth.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/` 
+Here the `{auth_base_url}` is `http://authn.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/` 
 
     > Note: Replace the `auth_base_url` ith your actual URL. The URL is followed by `/oauth` which is the path to the social google login endpoint.
 
@@ -301,7 +301,7 @@ Here the `{auth_base_url}` is `http://auth.zeromagic.cloud/auth/86165f63f34e4be8
         const handleGoogleLogin = async () => {
             try {
             // REPLACE_HERE : Replace the {auth_base_url}/oauth with the copied URL from the environment details and with the path to the social google login endpoint
-            const response = await fetch('http://auth.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/oauth', {
+            const response = await fetch('http://authn.zeromagic.cloud/auth/86165f63f34e4be89809c2948c424a99/development/oauth', {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',

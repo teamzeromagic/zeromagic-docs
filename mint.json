@@ -26,11 +26,13 @@
   "indexHiddenPages": true
   },
   "metadata": {
-    "og:site_name": "Zeromagic",
     "og:description": "ZeroMagic is a AI powered low-code platform that builds backend microservices super fast. Now building, deploying & scaling your application happen in minutes, saving you time and getting things done faster",
     "og:url": "https://docs.zeromagic.cloud",
     "og:image": "/assets/logo/banner.svg",
-    "og:logo": "/assets/logo/logo.svg",
+    "og:site_name": "Zeromagic Documentation",
+    "og:type": "website",
+    "og:logo": "https://zeromagic.cloud/static/media/logo.c549b22984076cb04644dd0289f6d141.svg",
+    "og:title": "Zeromagic Documentation",
     "og:image:width": "1200",
     "og:image:height": "630"
   },
@@ -38,23 +40,14 @@
     "prompt": "Search docs..."
   },
   "topbarLinks": [
-    
-    {
-      "name": "Pricing",
-      "url": "mailto:ndrohith@zeromagic.cloud"
-    },
     {
       "name": "Support",
-      "url": "mailto:ndrohith@zeromagic.cloud"
-    },
-    {
-      "name": "Community",
       "url": "mailto:ndrohith@zeromagic.cloud"
     }
   ],
   "topbarCtaButton": {
     "name": "Get Started",
-    "url": "https://zeromagic.cloud/"
+    "url": "https://console.zeromagic.cloud/"
   }, 
  
 
@@ -77,6 +70,7 @@
     {
       "name": "Magic AI",
       "icon": "wand-magic-sparkles",
+<<<<<<< HEAD
       "url": "https://docs.zeromagic.cloud/basics/magic-ai"
     },
     {
@@ -99,6 +93,10 @@
       "icon": "graduation-cap",
       "url": "http://docs.zeromagic.cloud/learn"
     } 
+=======
+      "url": "https://docs.zeromagic.cloud/magic-ai"
+    }
+>>>>>>> 0a56cd0ab81e2116baf8cf4e4540f8fb419faa99
   ],
   "navigation": [
     {
