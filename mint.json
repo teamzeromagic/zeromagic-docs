@@ -26,10 +26,13 @@
   "indexHiddenPages": true
   },
   "metadata": {
-    "og:site_name": "Zeromagic",
+    "og:site_name": "Zeromagic Documentation",
+    "og:type": "website",
     "og:url": "https://docs.zeromagic.cloud",
     "og:image": "https://zeromagic.cloud/static/media/logo.c549b22984076cb04644dd0289f6d141.svg",
     "og:logo": "https://zeromagic.cloud/static/media/logo.c549b22984076cb04644dd0289f6d141.svg",
+    "og:title": "Zeromagic Documentation",
+    "og:description": "Zeromagic is a low-code platform that enables developers to build, deploy, and scale applications with ease.",
     "og:image:width": "1200",
     "og:image:height": "630"
   },
