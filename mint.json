@@ -26,13 +26,13 @@
   "indexHiddenPages": true
   },
   "metadata": {
+    "og:description": "ZeroMagic is a AI powered low-code platform that builds backend microservices super fast. Now building, deploying & scaling your application happen in minutes, saving you time and getting things done faster",
+    "og:url": "https://docs.zeromagic.cloud",
+    "og:image": "/assets/logo/banner.svg",
     "og:site_name": "Zeromagic Documentation",
     "og:type": "website",
-    "og:url": "https://docs.zeromagic.cloud",
-    "og:image": "https://zeromagic.cloud/static/media/logo.c549b22984076cb04644dd0289f6d141.svg",
     "og:logo": "https://zeromagic.cloud/static/media/logo.c549b22984076cb04644dd0289f6d141.svg",
     "og:title": "Zeromagic Documentation",
-    "og:description": "Zeromagic is a low-code platform that enables developers to build, deploy, and scale applications with ease.",
     "og:image:width": "1200",
     "og:image:height": "630"
   },
@@ -205,7 +205,8 @@
       "group": "Materials",
       "pages": [
         "materials/FAQs",
-        "materials/magic-ai-get-help"
+        "materials/magic-ai-get-help",
+        "materials/change-logs"
       ]
     },
 
@@ -260,11 +261,8 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch",
-    "youtube" : "https://www.youtube.com",
-    "discord" : "https://www.youtube.com",
-    "slack" : "https://www.youtube.com"
+    "github": "https://github.com/teamzeromagic",
+    "linkedin": "https://www.linkedin.com/company/zeromagic",
+    "youtube" : "https://www.youtube.com"
   }
 }
