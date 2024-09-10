@@ -44,8 +44,8 @@ Let’s say you have an API endpoint to fetch user data. The endpoint remains th
 
 Your platform has two environments: development (dev) and production (prod).
 
-- Development Environment: Base URL: `https://dev.your-api.com/api/v1`
-- Production Environment: Base URL: `https://prod.your-api.com/api/v1`
+- Development Environment: Base URL: `https://api.zeromagic.cloud/api/<api_id>/development/`
+- Production Environment: Base URL: `https://api.zeromagic.cloud/api/<api_id>/production/`
 
  
 This approach allows you to dynamically switch between different environments by simply changing the value of current environment, making your API management more flexible and robust.
@@ -135,11 +135,11 @@ A dictionary `environments` holds the configuration for different environments c
 const environments = {
     development: {
         name: "Development",
-        baseUrl: "https://dev.api.yourplatform.com"
+        baseUrl: "https://api.zeromagic.cloud/api/<api_id>/development/"
     },
     production: {
         name: "Production",
-        baseUrl: "https://api.yourplatform.com"
+        baseUrl: "https://api.zeromagic.cloud/api/<api_id>/production/"
     }
 };
 
@@ -151,11 +151,11 @@ const currentEnvironment = environments.development;
 environments = {
     "development": {
         "name": "Development",
-        "base_url": "https://dev.api.yourplatform.com"
+        "base_url": "https://api.zeromagic.cloud/api/<api_id>/development/"
     }, 
     "production": {
         "name": "Production",
-        "base_url": "https://api.yourplatform.com"
+        "base_url": "https://api.zeromagic.cloud/api/<api_id>/production/"
     }
 }
 

@@ -42,7 +42,7 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:ndrohith@zeromagic.cloud"
+      "url": "mailto:zeromagic.cloud@gmail.com"
     }
   ],
   "topbarCtaButton": {
@@ -214,8 +214,8 @@
       "group": "Latest Blogs",
       "pages": [
         "blog/introduction",
-        "blog/build-your-first-graphql-api-in-minutes-with-zeromagic",
-        "blog/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder"
+        "blog/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder",
+        "blog/build-your-first-graphql-api-in-minutes-with-zeromagic"
       ]
     },
     {

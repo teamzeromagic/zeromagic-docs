@@ -22,7 +22,7 @@ Login to [Zeromagic Platform](https://github.com/) and go to you `Project Consol
 Navigate to `Create GraphQL` button and this will open a form to create a GraphQL endpoint.
 - Name : Name of the Graph API
 - API Path: Define the base URL path that will be used to access the API endpoints. 
-
+- Authentication: By default, the endpoint is accessible to `all`. You can update the authentication to `App Key` in the graphql settings section.
 <Note>
 
 `graphql/` will be appened to the base URL path. You can not pass anyother parameters such as query parameters, etc in the API Path field.
@@ -63,6 +63,12 @@ To **list** a table, simply click on it and select the `list` option which will 
 
 Here, you can define model fields and relationships, tailoring the model to fit your specific needs. After defining the model click on `Create Logical Model` button to create your logical model.
 
+
+<Note>
+You can also use [Magic AI Schema Builder](/graphql/magic-ai-schema-builder) to build your GraphQL schema.
+</Note>
+
+
 ![add-logical-model](/assets/blogs/build-your-first-graphql-api-in-minutes-with-zeromagic/add-logical-model.png)
 
 
@@ -84,7 +90,7 @@ The `Listed` tab shows all the tables you've chosen to list. Click on a specific
 
 You can view the `schema` by nagivating to the `GraphQL` page.
 
-![schema](//assets/blogs/build-your-first-graphql-api-in-minutes-with-zeromagic/schema.png)
+![schema](/assets/blogs/build-your-first-graphql-api-in-minutes-with-zeromagic/schema.png)
 
 <Note>
 The schema is automatically generated based on model fields and cannot be edited.
@@ -93,9 +99,22 @@ The schema is automatically generated based on model fields and cannot be edited
 
 ### Step 5: Test in GraphiQL
 
-Click on the `GraphQL` option in the sidebar to open the GraphiQL playground. This interface allows you to test your queries and mutations in real-time, ensuring everything works as expected.
+Click on the `GraphQL` option in the sidebar to open the GraphiQL playground.
 
-The GraphiQL interface includes three useful menus on the right sidebar:
+> Pass you `APP-ID` and `APP-KEY` in the headers (since your authentication is selected as **APP-KEY**) which can be found in your project settings.
+ 
+Provide the graphql query and hit the `Execute Query` button to execute the query.
+
+<Note>
+You can also use [Magic AI Query Generator](/graphql/magic-ai-query-generator) to build your GraphQL schema.
+</Note>
+
+![graphiql](/assets/blogs/build-your-first-graphql-api-in-minutes-with-zeromagic/graphiql.png)
+
+### About GraphiQL
+
+The GraphiQL allows you to test your queries and mutations in real-time, ensuring everything works as expected.
+This interface includes three useful menus on the right sidebar:
 
 - **Show Documentation Explorer:** Access a detailed, interactive representation of your GraphQL schema. This helps you understand the available data types, fields, and relationships within your data.
 - **Show History:** Review your previously executed queries for quick reference.
@@ -104,3 +123,4 @@ The GraphiQL interface includes three useful menus on the right sidebar:
 
 By following these steps, you will be able to connect your data sources, list tables, and create logical models on the Zeromagic platform. This process streamlines the creation of your GraphQL API, allowing you to focus on building robust and efficient applications. Get started today and experience the power of Zeromagic for yourself!
 
+With Zeromagic, creating powerful GraphQL APIs is easier than ever. Sign up for Zeromagic and start building your first GraphQL API in minutes. The future of API development is here.

@@ -251,11 +251,47 @@ The `UpdateMany` operation allows you to modify multiple documents. This is help
 ![updateMany](/assets/blogs/learn-to-use-cosmos-database-operations/updateMany.png) 
 ### Sample Data
 
+
+```json Request Body Data
+[{
+    "id": "1",
+    "value":  {
+      "dept": "CSE AIE",
+    }
+},
+{
+    "id": "2",
+    "value":  {
+      "dept": "EEE",
+    }
+}]
+```
+
 ```json Response Data
 {
   "data-result": {
     "data": [
-      
+        { 
+        "courses": "[maths, science, english]",
+        "dept": "CSE AIE",
+        "id": "1",
+        "name": "John Doe"
+        "email": "john.doe@example.com"
+      } ,
+      { 
+        "courses": "physics, english]",
+        "dept": "EEE",
+        "id": "2",
+        "name": "Jim Beam"
+        "email": "jim.beam@example.com"
+      },
+      { 
+        "courses": "[maths, science]",
+        "dept": "CSE",
+        "id": "3",
+        "name": "Jane Doe"
+        "email": "jane.doe@example.com"
+      }
     ]
   },
   "status": 200
@@ -284,7 +320,13 @@ The `DeleteOne` operation deletes a single document based on its unique identifi
 {
   "data-result": {
     "data": [
-      
+      { 
+        "courses": "[maths, science, english]",
+        "dept": "CSE AIE",
+        "id": "1",
+        "name": "John Doe"
+        "email": "john.doe@example.com"
+      }
     ]
   },
   "status": 200
@@ -302,11 +344,33 @@ The `DeleteMany` operation deletes multiple documents based on a query. This is 
 
 ### Sample Data
 
+```json Request Body Data
+[{
+    "id": "1" 
+},
+{
+    "id": "2" 
+}]
+```
+
 ```json Response Data
 {
   "data-result": {
     "data": [
-      
+      { 
+        "courses": "[maths, science, english]",
+        "dept": "CSE AIE",
+        "id": "1",
+        "name": "John Doe"
+        "email": "john.doe@example.com"
+      },
+      { 
+        "courses": "physics, english]",
+        "dept": "EEE",
+        "id": "2",
+        "name": "Jim Beam"
+        "email": "jim.beam@example.com"
+      }
     ]
   },
   "status": 200
@@ -330,19 +394,6 @@ Check [here](/datasources/zeromagic-query-language/operators-property/) to learn
 
 
 ![CustomQuery](/assets/blogs/learn-to-use-cosmos-database-operations/customQuery.png)
-
-### Sample Data
-
-```json Response Data
-{
-  "data-result": {
-    "data": [
-      
-    ]
-  },
-  "status": 200
-}
-```
 
 Understanding and utilizing these operations will empower you to manage your Cosmos Database effectively, whether you need to create, read, update, or delete data. Our platform simplifies these tasks, enabling you to focus on building robust applications with ease.
 

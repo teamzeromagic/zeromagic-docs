@@ -11,7 +11,7 @@ date: 2024-05-27T10:00
 In this blog post, we'll explore how to create your first REST API on the Zeromagic Platform. Whether you're a beginner or an experienced developer, our intuitive Workflow Builder will guide you through setting up endpoints, defining data models, and handling HTTP requests. Let's dive in and see how you can quickly build and deploy a functional REST API with GET and POST methods, empowering your applications with seamless data interactions.
 
 ### Step 1: Login to Project Console
-Login to [Zeromagic Platform](https://github.com/) and go to you `Project Console`. Now navigate to `Rest API` in the sidebar of the console.
+Login to [Zeromagic Platform](https://console.zeromagic.cloud/) and go to you `Project Console`. Now navigate to `Rest API` in the sidebar of the console.
 
 ![ModuleDashboard](/assets/blogs/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder/module_console.png)
  
@@ -40,7 +40,7 @@ Look for a button labeled `Create Rest API` or `+` in the API List space within 
     - `Description`:Short description of the API
     - `API Route`: Define the base URL path that will be used to access the API endpoints. This path can include path parameters (indicated by `{<param>}`) to capture dynamic values in the URL.    
     **Example**: `/users/{userId}` (where `{userId}` would be a variable placeholder captured from the request URL).
-    - `Authentication Method`: If your API requires authentication to access certain or all resources, select the appropriate authentication method. Check on the Authentication to know more about authentication methods. 
+    - `Authentication Method`: If your API requires authentication to access certain or all resources, select the appropriate authentication method. Check on the [Debug section](/restapi/debuglogs) to know more about authentication. 
     - `Request Method`: Specify the HTTP method that clients should use to interact with your API.
 
 ![CreateAPI](/assets/blogs/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder/create-api.png)
@@ -55,7 +55,16 @@ Now let's add `Cosmos Create One` block in the workflow to create `Spell` data i
 
 > Assuming that the database is configured in the Database section of the Project Console.
 
-In the options panel of the `Cosmos Create One` you can find the **container name** is predefined in `Free-Plan`. Now in the `Record to add` field set the body data of request. 
+In the "Cosmos Create One" options panel, locate the "container name" field (also referred to as "alias tables"). Enter "spell" as the container name (table name). Then, in the "Record to add" field, input the body data of your request
+
+
+<Note>
+
+The **container name** field specifies the preferred name for your table (e.g., "spell"). This name will be used as an alias when accessing the table.
+
+</Note>
+
+   
 
 ![Request Body](/assets/blogs/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder/create-body.png)
 
@@ -76,13 +85,42 @@ Now click on the `Deploy` button such that the API is automatically deployed and
 
 ### Step 5: Test the POST method
 
+#### 1. Test using Platform
+
+You can test your API by navigating to `Logs` section. Click on `Debug` button to provide your test data. Select the `environment` and provide the necessary body data.
+
+> Pass you `APP-ID` and `APP-KEY` in the headers (since your authentication is selected as **APP-KEY**) which can be found in your project settings.
+
+<Warning>
+
+Make sure to pass `id` key in the body data while using `POST` method.
+
+</Warning>
+
+![Debug POST request](/assets/blogs/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder/debug-post-api.png)
+
+Click on `Test API` and you can see the API logs in the page once your API is executed.
+
+![Debug POST response](/assets/blogs/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder/debug-post-response.png)
+
+#### 2. Test using Postman
+
 You can access the API by selecting the specific environment you need. You can find the **API Endpoint** in the `Details` tab.
+
+Copy the API endpoint and paste in the URL section of the postman. Select method to `POST` and nagivate to `Headers` and `Body` section to pass the required data. 
+
+
+![Postman API Headers](/assets/blogs/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder/post-api-headers-postman.png)
+
+![Postman API response](/assets/blogs/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder/post-api-response-postman.png)
+
+You can also check the log of this particular request in the `Logs` section of the API in the Zeromagic console. 
 
 ### Step 6: Create new flow to GET Spell Data from DB
 
 Now let's create a new **Rest API** to fetch Spell data. Click on the `+` icon on the RestAPI List section. Enter the details of the API required to fetch the Spell data.
 
-Add the `Cosmos Read Many` block in the workflow to get all the information of the `Spells` from the database. Add the `Sort Key` and `Sort Order` in the Options panel.
+Add the `Cosmos Read Many` block in the workflow to get all the information of the `Spells` from the database. Add the `Container name`, `Sort Key` and `Sort Order` in the Options panel.
 
 Now in the `HTTP Response` update the **Response Variable** to `{{$readMany.val}}` which is output of the Cosmos Read Many.
 
@@ -93,4 +131,12 @@ Now click on the `Deploy` button such that the API is automatically deployed and
 
 ### Step 7: Test the GET method
 
-You can access the API by selecting the specific environment you need. You can find the **API Endpoint** in the `Details` tab.
+Navigate to the `Logs` section and click on the `Debug` button. Provide the necessary `Headers` according to the **authentication** settings.
+
+
+![Debug GET API Request](/assets/blogs/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder/debug-get-api-request.png)
+![Debug GET API Response](/assets/blogs/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder/debug-get-api-response.png)
+
+
+With Zeromagic, creating powerful REST APIs is easier than ever. Sign up for Zeromagic and start building your first REST API in minutes. The future of API development is here.
+
