@@ -227,7 +227,8 @@
         "blog/learn-to-use-cosmos-database-operations",
         "blog/learn-to-use-for-loops-in-workflows",
         "blog/using-for-loops-with-items-in-workflows-for-sending-promotional-sms-messages",
-        "blog/managing-deployment-using-environments-in-zeromagic"
+        "blog/managing-deployment-using-environments-in-zeromagic",
+        "blog/simplify-email-api-integration-with-zeromagic"
       ]
     },
     
