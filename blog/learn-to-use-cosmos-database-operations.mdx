@@ -111,7 +111,7 @@ The `CreateMany` operation enables you to insert multiple documents at once. Thi
     {
       "id": "2",
       "_ts": 1726553235,
-      "_rid": "5bQ3ANPWhcUIAAAAAAAAAA==",
+      "_rid": "5bQ3ANPWhcUIAAAAAAAAAA==", 
       "dept": "ECE",
       "name": "Jim Beam",
       "_etag": "\"00006b0d-0000-0300-0000-66e91c930000\"",
@@ -127,7 +127,7 @@ The `CreateMany` operation enables you to insert multiple documents at once. Thi
     {
       "id": "3",
       "_ts": 1726553235,
-      "_rid": "5bQ3ANPWhcUJAAAAAAAAAA==",
+      "_rid": "5bQ3ANPWhcUJAAAAAAAAAA==", 
       "dept": "CSE",
       "name": "Jane Doe",
       "_etag": "\"00006c0d-0000-0300-0000-66e91c930000\"",
@@ -170,7 +170,7 @@ curl -X GET https://api.zeromagic.cloud/api/b819ea802f674352beec615db8297262/dev
   "data": {
     "id": "1",
     "_ts": 1726552985,
-    "_rid": "5bQ3ANPWhcUHAAAAAAAAAA==",
+    "_rid": "5bQ3ANPWhcUHAAAAAAAAAA==", 
     "dept": "CSE",
     "name": "John Doe",
     "_etag": "\"0000650d-0000-0300-0000-66e91b990000\"",
@@ -209,7 +209,7 @@ The `ReadMany` operation lets you fetch multiple documents that match a given cr
     {
       "id": "3",
       "_ts": 1726553235,
-      "_rid": "5bQ3ANPWhcUJAAAAAAAAAA==",
+      "_rid": "5bQ3ANPWhcUJAAAAAAAAAA==", 
       "dept": "CSE",
       "name": "Jane Doe",
       "_etag": "\"00006c0d-0000-0300-0000-66e91c930000\"",
@@ -225,7 +225,7 @@ The `ReadMany` operation lets you fetch multiple documents that match a given cr
     {
       "id": "2",
       "_ts": 1726553235,
-      "_rid": "5bQ3ANPWhcUIAAAAAAAAAA==",
+      "_rid": "5bQ3ANPWhcUIAAAAAAAAAA==", 
       "dept": "ECE",
       "name": "Jim Beam",
       "_etag": "\"00006b0d-0000-0300-0000-66e91c930000\"",
@@ -241,7 +241,7 @@ The `ReadMany` operation lets you fetch multiple documents that match a given cr
     {
       "id": "1",
       "_ts": 1726552985,
-      "_rid": "5bQ3ANPWhcUHAAAAAAAAAA==",
+      "_rid": "5bQ3ANPWhcUHAAAAAAAAAA==", 
       "dept": "CSE",
       "name": "John Doe",
       "_etag": "\"0000650d-0000-0300-0000-66e91b990000\"",
@@ -277,7 +277,7 @@ The `UpdateOne` operation allows you to modify a single document. This is helpfu
 ```json Request Data
 curl -X PUT https://api.zeromagic.cloud/api/b819ea802f674352beec615db8297262/dev/operations/student/put/1/ \
 -H "APP-KEY: YOUR_APP_KEY" \
--d '{"dept" : "CSE AIE"}'
+-d '{"age" : 20}'
 ```
 
 ```json Response Data
@@ -286,6 +286,7 @@ curl -X PUT https://api.zeromagic.cloud/api/b819ea802f674352beec615db8297262/dev
     "id": "1",
     "_ts": 1726552985,
     "_rid": "5bQ3ANPWhcUHAAAAAAAAAA==",
+    "age" : 20,
     "dept": "CSE AIE",
     "name": "John Doe",
     "_etag": "\"0000650d-0000-0300-0000-66e91b990000\"",
@@ -310,7 +311,7 @@ The `UpdateMany` operation allows you to modify multiple documents. This is help
 2. In the `Http Response` block , set the `Response Variable` field to expression as `{{$block-name.val}}`.
 
 ```bash API URL
-<base_url>/student/put/bulk/
+<base_url>/students/put/bulk/
 ``` 
 
 ![updateMany](/assets/blogs/learn-to-use-cosmos-database-operations/updateMany.png) 
@@ -321,7 +322,7 @@ The `UpdateMany` operation allows you to modify multiple documents. This is help
 
 ```json Request Body Data
 {
-  "dept": "EEE",
+  "age": 19,
 }
 ```
 
@@ -332,6 +333,7 @@ The `UpdateMany` operation allows you to modify multiple documents. This is help
       "id": "3",
       "_ts": 1726553235,
       "_rid": "5bQ3ANPWhcUJAAAAAAAAAA==",
+      "age" : 21,
       "dept": "EEE",
       "name": "Jane Doe",
       "_etag": "\"00006c0d-0000-0300-0000-66e91c930000\"",
@@ -348,6 +350,7 @@ The `UpdateMany` operation allows you to modify multiple documents. This is help
       "id": "2",
       "_ts": 1726553235,
       "_rid": "5bQ3ANPWhcUIAAAAAAAAAA==",
+      "age" : 19,
       "dept": "EEE",
       "name": "Jim Beam",
       "_etag": "\"00006b0d-0000-0300-0000-66e91c930000\"",
@@ -364,6 +367,7 @@ The `UpdateMany` operation allows you to modify multiple documents. This is help
       "id": "1",
       "_ts": 1726552985,
       "_rid": "5bQ3ANPWhcUHAAAAAAAAAA==",
+      "age" : 20,
       "dept": "CSE",
       "name": "John Doe",
       "_etag": "\"0000650d-0000-0300-0000-66e91b990000\"",
@@ -399,28 +403,30 @@ The `DeleteOne` operation deletes a single document based on its unique identifi
 ### Sample Data
  
 ```json Request Data
-curl -X GET https://api.zeromagic.cloud/api/b819ea802f674352beec615db8297262/dev/operations/student/del/2/ \
+curl -X GET https://api.zeromagic.cloud/api/b819ea802f674352beec615db8297262/dev/operations/student/del/1/ \
 -H "APP-KEY: YOUR_APP_KEY"
 ``` 
 
 ```json Response Data
 {
-  "data": {
-    "id": "2",
-    "_ts": 1726558891,
-    "_rid": "5bQ3ANPWhcUIAAAAAAAAAA==",
-    "dept": "EEE",
-    "name": "Jim Beam",
-    "_etag": "\"0000b40d-0000-0300-0000-66e932ab0000\"",
-    "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUIAAAAAAAAAA==/",
-    "email": "jim.beam@example.com",
-    "_module": "rest_student",
-    "courses": [
-      "physics",
-      "english"
-    ],
-    "_attachments": "attachments/"
-  }
+    "data": {
+        "_attachments": "attachments/",
+        "_etag": "\"14004e6b-0000-0300-0000-66f105130000\"",
+        "_module": "rest_student",
+        "_rid": "5bQ3ANPWhcUOAAAAAAAAAA==",
+        "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUOAAAAAAAAAA==/",
+        "_ts": 1727071507,
+        "age": 21,
+        "courses": [
+            "maths",
+            "science",
+            "english"
+        ],
+        "dept": "CSE",
+        "email": "john.doe@example.com",
+        "id": "1",
+        "name": "John Doe"
+    }
 }
 ```
 
@@ -432,7 +438,7 @@ The `DeleteMany` operation deletes multiple documents based on a query. This is 
 2. In the `Http Response` block , set the `Response Variable` field to expression as `{{$block-name.val}}`.
 
 ```bash API URL
-<base_url>/student/del/bulk/
+<base_url>/students/del/bulk/
 ``` 
 
 ![deleteMany](/assets/blogs/learn-to-use-cosmos-database-operations/deleteMany.png)
@@ -441,21 +447,22 @@ The `DeleteMany` operation deletes multiple documents based on a query. This is 
 ### Sample Data
 
 ```json Request Data
-curl -X GET https://api.zeromagic.cloud/api/b819ea802f674352beec615db8297262/dev/operations/student/del/bulk/ \
+curl -X GET https://api.zeromagic.cloud/api/b819ea802f674352beec615db8297262/dev/operations/students/del/bulk/ \
 -H "APP-KEY: YOUR_APP_KEY"
 ``` 
 
 ```json Response Data
 {
   "data": [
-        {
+    {
       "id": "2",
-      "_ts": 1726553235,
-      "_rid": "5bQ3ANPWhcUIAAAAAAAAAA==",
-      "dept": "EEE",
+      "_ts": 1727071256,
+      "age": 21,
+      "_rid": "5bQ3ANPWhcUPAAAAAAAAAA==",
+      "dept": "ECE",
       "name": "Jim Beam",
-      "_etag": "\"00006b0d-0000-0300-0000-66e91c930000\"",
-      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUIAAAAAAAAAA==/",
+      "_etag": "\"1400b966-0000-0300-0000-66f104180000\"",
+      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUPAAAAAAAAAA==/",
       "email": "jim.beam@example.com",
       "_module": "rest_student",
       "courses": [
@@ -466,12 +473,13 @@ curl -X GET https://api.zeromagic.cloud/api/b819ea802f674352beec615db8297262/dev
     },
     {
       "id": "3",
-      "_ts": 1726553235,
-      "_rid": "5bQ3ANPWhcUJAAAAAAAAAA==",
-      "dept": "EEE",
+      "_ts": 1727070004,
+      "age": 20,
+      "_rid": "5bQ3ANPWhcUQAAAAAAAAAA==",
+      "dept": "CSE",
       "name": "Jane Doe",
-      "_etag": "\"00006c0d-0000-0300-0000-66e91c930000\"",
-      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUJAAAAAAAAAA==/",
+      "_etag": "\"1400b653-0000-0300-0000-66f0ff340000\"",
+      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUQAAAAAAAAAA==/",
       "email": "jane.doe@example.com",
       "_module": "rest_student",
       "courses": [

@@ -32,6 +32,13 @@ Conditions are built using an intuitive graphical interface, allowing users to s
 - In / Not In
 - Starts with
 
+
+<Note> 
+When using comparison operators (e.g., >, <, >=, <=), verify that the field data types are compatible. 
+For example, If the `id` field is of type `string`, using `id > 10` would result in an error. You cannot directly compare a string value with a numeric value using numerical comparison operators.
+</Note>
+
+
 ###  Data Types
 
 Both the left-hand side and right-hand side support a variety of data types, including:

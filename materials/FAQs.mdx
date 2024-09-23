@@ -30,6 +30,13 @@ The `forloop.val` variable is specific to the loop block and cannot be directly 
 Yes, the AI Schema Builder is designed to handle complex database schemas with multiple tables and fields.
 </Accordion>
 
+
+<Accordion title="Preventing Comparison Errors Due to Incorrect Data Types in If Else Condition Editor">
+When using comparison operators `(e.g., >, <, >=, <=)`, verify that the field data types are compatible. 
+For example, If the `id` field is of type `string`, using `id > 10` would result in an error. You cannot directly compare a string value with a numeric value using numerical comparison operators.
+</Accordion>
+
+
 {/* <Accordion title="How to use Magic AI - Flow Generator effectively">
 Provide detailed and clear prompts to ensure the generated flow matches your requirements closely
 </Accordion> */}
