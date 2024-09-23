@@ -277,20 +277,20 @@ The `UpdateOne` operation allows you to modify a single document. This is helpfu
 ```json Request Data
 curl -X PUT https://api.zeromagic.cloud/api/b819ea802f674352beec615db8297262/dev/operations/student/put/1/ \
 -H "APP-KEY: YOUR_APP_KEY" \
--d '{"age" : 20}'
+-d '{"age" : 21}'
 ```
 
 ```json Response Data
 {
   "data": {
     "id": "1",
-    "_ts": 1726552985,
-    "_rid": "5bQ3ANPWhcUHAAAAAAAAAA==",
-    "age" : 20,
-    "dept": "CSE AIE",
+    "_ts": 1727073910,
+    "age": 21,
+    "_rid": "5bQ3ANPWhcURAAAAAAAAAA==",
+    "dept": "CSE",
     "name": "John Doe",
-    "_etag": "\"0000650d-0000-0300-0000-66e91b990000\"",
-    "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUHAAAAAAAAAA==/",
+    "_etag": "\"1400bf92-0000-0300-0000-66f10e760000\"",
+    "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcURAAAAAAAAAA==/",
     "email": "john.doe@example.com",
     "_module": "rest_student",
     "courses": [
@@ -322,7 +322,7 @@ The `UpdateMany` operation allows you to modify multiple documents. This is help
 
 ```json Request Body Data
 {
-  "age": 19,
+  "age": 20,
 }
 ```
 
@@ -331,53 +331,18 @@ The `UpdateMany` operation allows you to modify multiple documents. This is help
   "data": [
     {
       "id": "3",
-      "_ts": 1726553235,
-      "_rid": "5bQ3ANPWhcUJAAAAAAAAAA==",
-      "age" : 21,
-      "dept": "EEE",
+      "_ts": 1727074102,
+      "age": 20,
+      "_rid": "5bQ3ANPWhcUTAAAAAAAAAA==",
+      "dept": "CSE",
       "name": "Jane Doe",
-      "_etag": "\"00006c0d-0000-0300-0000-66e91c930000\"",
-      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUJAAAAAAAAAA==/",
+      "_etag": "\"14008595-0000-0300-0000-66f10f360000\"",
+      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUTAAAAAAAAAA==/",
       "email": "jane.doe@example.com",
       "_module": "rest_student",
       "courses": [
         "maths",
         "science"
-      ],
-      "_attachments": "attachments/"
-    },
-    {
-      "id": "2",
-      "_ts": 1726553235,
-      "_rid": "5bQ3ANPWhcUIAAAAAAAAAA==",
-      "age" : 19,
-      "dept": "EEE",
-      "name": "Jim Beam",
-      "_etag": "\"00006b0d-0000-0300-0000-66e91c930000\"",
-      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUIAAAAAAAAAA==/",
-      "email": "jim.beam@example.com",
-      "_module": "rest_student",
-      "courses": [
-        "physics",
-        "english"
-      ],
-      "_attachments": "attachments/"
-    },
-    {
-      "id": "1",
-      "_ts": 1726552985,
-      "_rid": "5bQ3ANPWhcUHAAAAAAAAAA==",
-      "age" : 20,
-      "dept": "CSE",
-      "name": "John Doe",
-      "_etag": "\"0000650d-0000-0300-0000-66e91b990000\"",
-      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUHAAAAAAAAAA==/",
-      "email": "john.doe@example.com",
-      "_module": "rest_student",
-      "courses": [
-        "maths",
-        "science",
-        "english"
       ],
       "_attachments": "attachments/"
     }

@@ -22,7 +22,17 @@ We're sorry you're experiencing an error. Here are some troubleshooting steps:
 
 </Accordion>
 
-<Accordion title="Can loop.val be accessed outside the loop">
+<Accordion title="How do I avoid URL conflicts when using '/student/{id}/' and '/student/bulk/' in my API?">
+The conflict arises because the `/student/{id}/` endpoint uses a dynamic path parameter `:id`, which can potentially match the `/bulk` segment in the `/student/bulk/` endpoint. To avoid this conflict, you can modify the URL paths to be more distinct:
+
+- `/student/{id}/` remains unchanged.
+- `/students/bulk/` is a more specific path for bulk update operations.
+
+By using the plural form students in the bulk update path, you clearly differentiate it from the single-item update path. 
+
+</Accordion>
+
+<Accordion title="Can 'loop.val' be accessed outside the loop?">
 The `forloop.val` variable is specific to the loop block and cannot be directly accessed outside of it. Attempting to access forloop.val outside the loop will result in an error indicating that the `variable is not in memory`.
 </Accordion>
 
