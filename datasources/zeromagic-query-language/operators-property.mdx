@@ -5,6 +5,12 @@ icon: "brackets-curly"
 ---
 Zeromagic introduces container, operators and properties, providing developers with a structured approach to perform operations on data containers and individual items within those containers. These properties enable efficient data manipulation and management within the Zeromagic platform.
 
+Zeromagic Query Language supports CRUD operations:
+    - ReadOne and ReadMany
+    - CreateOne and CreateMany
+    - UpdateOne and UpdateMany
+    - DeleteOne and DeleteMany
+
 ## Filter Property
 
 The filter property within your Zeromagic queries provides a versatile set of operators to refine your data access. Here's a breakdown of some commonly used operators:
@@ -38,21 +44,7 @@ The filter property within your Zeromagic queries provides a versatile set of op
 "@sort": { "key": "name", "order": "desc" }
 ```
 
-### 3. Field Selection
-
-`@fields`: Define a list of fields `["<field_1>", "<field_2>", "<field_3>"]` you want to retrieve from the records. To represent aliases for a return field, provide input field as `[{"<field_1>":"alias"}]`.
-
-```json
-//retrieve specific fields
-"@fields" : ["id","name","price","status"],
-
-//retrieve specific fields with alias
-"@fields" : [{"name":"full_name"}]
-```
-Here, `name` is the original field and `full_name` is the alias name. So output will be like `{"full_name":"Zeromagic"}` instead of `{"name":"Zeromagic"}`. This is useful when you want to change the field name in the output.
-
-
-### 4. Comparison Operators:
+### 3. Comparison Operators:
 
 `@eq`: Exact equality check
 
@@ -97,7 +89,7 @@ Here, `name` is the original field and `full_name` is the alias name. So output 
 ```
 
 
-### 5. String Matching:
+### 4. String Matching:
 
 `@contains`: Check if a string contains a specific substring.
 
@@ -134,7 +126,6 @@ Here, `name` is the original field and `full_name` is the alias name. So output 
 "container" : "ecommerce",
 "filter" : {
         "@sort": { "key": "name", "order": "asc" },
-        "@fields" : ["id","name","price" , "status"],
         "id": "1",
         "price": {
             "@gt": 20,
@@ -159,9 +150,9 @@ Here, `name` is the original field and `full_name` is the alias name. So output 
 ```jsx Query-2
 {
     "container" : "ecommerce",
+    "fields" : ["id",{"name":"full_name"},{"price" : "cost_price"} , "status"],
     "filter" : {
             "@sort": { "key": "name", "order": "asc" },
-            "@fields" : ["id",{"name":"full_name"},{"price" : "cost_price"} , "status"],
             "@and" : [
                 {
                     "id": "1"
@@ -199,7 +190,21 @@ Here, `name` is the original field and `full_name` is the alias name. So output 
 "container" : "student"
 ```
 
-### 2. Item Property: (Required for `createOne` method)
+### 2. Field Selection
+
+`fields`: Define a list of fields `["<field_1>", "<field_2>", "<field_3>"]` you want to retrieve from the records. To represent aliases for a return field, provide input field as `[{"<field_1>":"alias"}]`.
+
+```json
+//retrieve specific fields
+"fields" : ["id","name","price","status"],
+
+//retrieve specific fields with alias
+"fields" : [{"name":"full_name"}]
+```
+Here, `name` is the original field and `full_name` is the alias name. So output will be like `{"full_name":"Zeromagic"}` instead of `{"name":"Zeromagic"}`. This is useful when you want to change the field name in the output.
+
+
+### 3. Item Property: (Required for `createOne` method)
 
 `item`: Represents a single item to be created within a data container. This property encapsulates the attributes and values of the item to be created, facilitating the creation of individual data records.
 
@@ -222,7 +227,7 @@ Here, `name` is the original field and `full_name` is the alias name. So output 
 ```
 
 
-### 3. Items Property: (Required for `createMany` method)
+### 4. Items Property: (Required for `createMany` method)
 
 `items`: Contains an array of multiple items to be created within a data container. This property allows developers to create multiple data records simultaneously, streamlining the data creation process.
 
@@ -257,7 +262,7 @@ Here, `name` is the original field and `full_name` is the alias name. So output 
 
 ```
 
-### 4. Update Property: (Required for `updateOne` and `updateMany` method)
+### 5. Update Property: (Required for `updateOne` and `updateMany` method)
 
 `update`: Defines the properties to be updated for a specific data record. This property specifies the attributes and new values to be applied to the selected record, enabling seamless data updates within Zeromagic containers.
 

@@ -187,8 +187,8 @@
           "group": "Zeromagic Query Language",
           "pages": [
             "datasources/zeromagic-query-language/overview",
-            "datasources/zeromagic-query-language/operators-property",
-            "datasources/zeromagic-query-language/database-operations"
+            "datasources/zeromagic-query-language/database-operations",
+            "datasources/zeromagic-query-language/operators-property"
           ]
         }
       ]
