@@ -42,7 +42,7 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:ndrohith@zeromagic.cloud"
+      "url": "mailto:zeromagic.cloud@gmail.com"
     }
   ],
   "topbarCtaButton": {
@@ -71,6 +71,11 @@
       "name": "Magic AI",
       "icon": "wand-magic-sparkles",
       "url": "https://docs.zeromagic.cloud/magic-ai"
+    },
+    {
+      "name": "Tutorials",
+      "icon": "circle-play",
+      "url": "https://www.youtube.com/@zeromagic-cloud"
     }
   ],
   "navigation": [
@@ -214,8 +219,8 @@
       "group": "Latest Blogs",
       "pages": [
         "blog/introduction",
-        "blog/build-your-first-graphql-api-in-minutes-with-zeromagic",
-        "blog/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder"
+        "blog/build-your-first-rest-api-in-minutes-using-zeromagic-flow-builder",
+        "blog/build-your-first-graphql-api-in-minutes-with-zeromagic"
       ]
     },
     {
@@ -227,7 +232,8 @@
         "blog/learn-to-use-cosmos-database-operations",
         "blog/learn-to-use-for-loops-in-workflows",
         "blog/using-for-loops-with-items-in-workflows-for-sending-promotional-sms-messages",
-        "blog/managing-deployment-using-environments-in-zeromagic"
+        "blog/managing-deployment-using-environments-in-zeromagic",
+        "blog/simplify-email-api-integration-with-zeromagic"
       ]
     },
     
@@ -263,6 +269,6 @@
   "footerSocials": {
     "github": "https://github.com/teamzeromagic",
     "linkedin": "https://www.linkedin.com/company/zeromagic",
-    "youtube" : "https://www.youtube.com"
+    "youtube" : "https://www.youtube.com/@zeromagic-cloud"
   }
 }

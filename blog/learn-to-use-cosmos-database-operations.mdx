@@ -20,7 +20,7 @@ Reference
 Check [here](/datasources/zeromagic-query-language/overview/) to learn more about Zeromagic Query Language
 </Tip>
 
-Login to [Zeromagic Platform](https://github.com/) and go to you `Project Console`. Now navigate to `Modules` in the sidebar of the console. Click on the necessary Module and navigate to the Flow Builder Page.
+Login to [Zeromagic Platform](https://console.zeromagic.cloud/) and go to you `Project Console`. Now navigate to `Modules` in the sidebar of the console. Click on the necessary Module and navigate to the Flow Builder Page.
 
 ## 1. CreateOne
 
@@ -29,6 +29,10 @@ The `CreateOne` operation allows you to insert a single document into your Cosmo
 1. Add a CreateOne block to your workflow. Set the `record to add` field to `{{$request.body}}` so as to specify the data that will be used to create the new record.
 2. In the `Http Response` block , set the `Response Variable` field to expression as `{{$block-name.val}}`.
  
+
+```bash API URL
+<base_url>/student/
+``` 
 ![CreateOne](/assets/blogs/learn-to-use-cosmos-database-operations/createOne.png)
 
 ### Sample Data
@@ -45,23 +49,23 @@ The `CreateOne` operation allows you to insert a single document into your Cosmo
 
 ```json Response Data
 {
-  "data-result": {
-    "data": [
-      {
-        "_attachments": "attachments/",
-        "_module": "rest",
-        "_rid": "AZYTAK-jPQYFAAAAAAAAAA==",
-        "_self": "dbs/AZYTAA==/colls/AZYTAK-jPQY=/docs/AZYTAK-jPQYFAAAAAAAAAA==/",
-        "_ts": 1717046615,
-        "courses": "[maths, science, english]",
-        "dept": "CSE",
-        "id": "1",
-        "name": "John Doe"
-        "email": "john.doe@example.com"
-      }
-    ]
-  },
-  "status": 200
+  "data": {
+    "id": "1",
+    "_ts": 1726552985,
+    "_rid": "5bQ3ANPWhcUHAAAAAAAAAA==",
+    "dept": "CSE",
+    "name": "John Doe",
+    "_etag": "\"0000650d-0000-0300-0000-66e91b990000\"",
+    "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUHAAAAAAAAAA==/",
+    "email": "john.doe@example.com",
+    "_module": "rest_student",
+    "courses": [
+      "maths",
+      "science",
+      "english"
+    ],
+    "_attachments": "attachments/"
+  }
 }
 ```
 
@@ -69,15 +73,20 @@ The `CreateOne` operation allows you to insert a single document into your Cosmo
 
 The `CreateMany` operation enables you to insert multiple documents at once. This is ideal for batch operations where you need to add several records simultaneously.
 
-1. Add a CreateMany block to your workflow. Set the `Create Value` field to `{{$request.body}}` so as to specify the data that will be used to create the new record.
+1. Add a CreateMany block to your workflow. Set the `Create Value` field to `{{$request.body.<key>}}` so as to specify the data that will be used to create the new record.
 2. In the `Http Response` block , set the `Response Variable` field to expression as `{{$block-name.val}}`.
  
+ ```bash API URL
+<base_url>/student/bulk/
+``` 
+
 ![CreateMany](/assets/blogs/learn-to-use-cosmos-database-operations/createMany.png)
 
 ### Sample Data
 
 ```json Request Body Data
- [
+ {
+  "students": [
   {
     "id": "2",
     "name": "Jim Beam",
@@ -93,36 +102,45 @@ The `CreateMany` operation enables you to insert multiple documents at once. Thi
     "dept" : "CSE"
 } 
 ]
+ }
 ```
 
 ```json Response Data
 {
-  "data-result": {
-    "data": [
-      { 
-        "courses": "[maths, science, english]",
-        "dept": "CSE",
-        "id": "1",
-        "name": "John Doe"
-        "email": "john.doe@example.com"
-      },
-      { 
-        "courses": "physics, english]",
-        "dept": "ECE",
-        "id": "2",
-        "name": "Jim Beam"
-        "email": "jim.beam@example.com"
-      },
-      { 
-        "courses": "[maths, science]",
-        "dept": "CSE",
-        "id": "3",
-        "name": "Jane Doe"
-        "email": "jane.doe@example.com"
-      }
-    ]
-  },
-  "status": 200
+  "data": [
+    {
+      "id": "2",
+      "_ts": 1726553235,
+      "_rid": "5bQ3ANPWhcUIAAAAAAAAAA==", 
+      "dept": "ECE",
+      "name": "Jim Beam",
+      "_etag": "\"00006b0d-0000-0300-0000-66e91c930000\"",
+      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUIAAAAAAAAAA==/",
+      "email": "jim.beam@example.com",
+      "_module": "rest_student",
+      "courses": [
+        "physics",
+        "english"
+      ],
+      "_attachments": "attachments/"
+    },
+    {
+      "id": "3",
+      "_ts": 1726553235,
+      "_rid": "5bQ3ANPWhcUJAAAAAAAAAA==", 
+      "dept": "CSE",
+      "name": "Jane Doe",
+      "_etag": "\"00006c0d-0000-0300-0000-66e91c930000\"",
+      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUJAAAAAAAAAA==/",
+      "email": "jane.doe@example.com",
+      "_module": "rest_student",
+      "courses": [
+        "maths",
+        "science"
+      ],
+      "_attachments": "attachments/"
+    }
+  ]
 }
 ```
  
@@ -134,30 +152,38 @@ The `ReadOne` operation allows you to retrieve a single document based on its un
 1. Add a ReadOne block to your workflow. Set the `Record Id` field to `{{$request.body.id}}` so as to specify the data that will be used to create the new record.
 2. In the `Http Response` block , set the `Response Variable` field to expression as `{{$block-name.val}}`.
 
+ ```bash API URL
+<base_url>/student/{id}/
+``` 
+
 ![readOne](/assets/blogs/learn-to-use-cosmos-database-operations/readOne.png)
 
 ### Sample Data
 
-```json Request Body Data
-{
-    "id": "1"
-}
+```json Request Data
+curl -X GET https://api.zeromagic.cloud/api/b819ea802f674352beec615db8297262/dev/operations/student/1/ \
+-H "APP-KEY: YOUR_APP_KEY"
 ```
 
 ```json Response Data
 {
-  "data-result": {
-    "data": [
-      { 
-        "courses": "[maths, science, english]",
-        "dept": "CSE",
-        "id": "1",
-        "name": "John Doe"
-        "email": "john.doe@example.com"
-      } 
-    ]
-  },
-  "status": 200
+  "data": {
+    "id": "1",
+    "_ts": 1726552985,
+    "_rid": "5bQ3ANPWhcUHAAAAAAAAAA==", 
+    "dept": "CSE",
+    "name": "John Doe",
+    "_etag": "\"0000650d-0000-0300-0000-66e91b990000\"",
+    "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUHAAAAAAAAAA==/",
+    "email": "john.doe@example.com",
+    "_module": "rest_student",
+    "courses": [
+      "maths",
+      "science",
+      "english"
+    ],
+    "_attachments": "attachments/"
+  }
 }
 ```
  
@@ -165,6 +191,9 @@ The `ReadOne` operation allows you to retrieve a single document based on its un
 
 The `ReadMany` operation lets you fetch multiple documents that match a given criteria. This is beneficial for retrieving a set of records based on certain conditions.
 
+```bash API URL
+<base_url>/students/
+``` 
 
 1. Add a ReadMany block to your workflow.  Set the `Sort Key` field to **name**, which corresponds to the data key in the schema, and choose either `asc` or `desc` for the `Sort Order`, depending on how you want the data to be sorted.
 
@@ -176,32 +205,57 @@ The `ReadMany` operation lets you fetch multiple documents that match a given cr
 
 ```json Response Data
 {
-  "data-result": {
-    "data": [
-      { 
-        "courses": "[maths, science]",
-        "dept": "CSE",
-        "id": "3",
-        "name": "Jane Doe"
-        "email": "jane.doe@example.com"
-      },
-      { 
-        "courses": "physics, english]",
-        "dept": "ECE",
-        "id": "2",
-        "name": "Jim Beam"
-        "email": "jim.beam@example.com"
-      },
-      { 
-        "courses": "[maths, science, english]",
-        "dept": "CSE",
-        "id": "1",
-        "name": "John Doe"
-        "email": "john.doe@example.com"
-      } 
-    ]
-  },
-  "status": 200
+  "data": [
+    {
+      "id": "3",
+      "_ts": 1726553235,
+      "_rid": "5bQ3ANPWhcUJAAAAAAAAAA==", 
+      "dept": "CSE",
+      "name": "Jane Doe",
+      "_etag": "\"00006c0d-0000-0300-0000-66e91c930000\"",
+      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUJAAAAAAAAAA==/",
+      "email": "jane.doe@example.com",
+      "_module": "rest_student",
+      "courses": [
+        "maths",
+        "science"
+      ],
+      "_attachments": "attachments/"
+    },
+    {
+      "id": "2",
+      "_ts": 1726553235,
+      "_rid": "5bQ3ANPWhcUIAAAAAAAAAA==", 
+      "dept": "ECE",
+      "name": "Jim Beam",
+      "_etag": "\"00006b0d-0000-0300-0000-66e91c930000\"",
+      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUIAAAAAAAAAA==/",
+      "email": "jim.beam@example.com",
+      "_module": "rest_student",
+      "courses": [
+        "physics",
+        "english"
+      ],
+      "_attachments": "attachments/"
+    },
+    {
+      "id": "1",
+      "_ts": 1726552985,
+      "_rid": "5bQ3ANPWhcUHAAAAAAAAAA==", 
+      "dept": "CSE",
+      "name": "John Doe",
+      "_etag": "\"0000650d-0000-0300-0000-66e91b990000\"",
+      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUHAAAAAAAAAA==/",
+      "email": "john.doe@example.com",
+      "_module": "rest_student",
+      "courses": [
+        "maths",
+        "science",
+        "english"
+      ],
+      "_attachments": "attachments/"
+    }
+  ]
 }
 ```
 ## 5. UpdateOne
@@ -211,33 +265,41 @@ The `UpdateOne` operation allows you to modify a single document. This is helpfu
 1. Add a UpdateOne block to your workflow. Set the `Record Id` field to `{{$request.body.id}}` and `Update Value` to `{{$request.body.value}}` to specify the data that will be used to update the existing record.
 2. In the `Http Response` block , set the `Response Variable` field to expression as `{{$block-name.val}}`.
 
+
+```bash API URL
+<base_url>/student/put/{id}/
+``` 
+
 ![updateOne](/assets/blogs/learn-to-use-cosmos-database-operations/updateOne.png)
+
 ### Sample Data
 
-```json Request Body Data
-{
-    "id": "1",
-    "value":  {
-      "name": "Maxwell",
-      "email": "maxwell@example.com",
-    }
-}
+```json Request Data
+curl -X PUT https://api.zeromagic.cloud/api/b819ea802f674352beec615db8297262/dev/operations/student/put/1/ \
+-H "APP-KEY: YOUR_APP_KEY" \
+-d '{"age" : 21}'
 ```
 
 ```json Response Data
 {
-  "data-result": {
-    "data": [
-      { 
-        "courses": "[maths, science, english]",
-        "dept": "CSE",
-        "id": "1",
-        "name": "Maxwell"
-        "email": "maxwell@example.com"
-      } 
-    ]
-  },
-  "status": 200
+  "data": {
+    "id": "1",
+    "_ts": 1727073910,
+    "age": 21,
+    "_rid": "5bQ3ANPWhcURAAAAAAAAAA==",
+    "dept": "CSE",
+    "name": "John Doe",
+    "_etag": "\"1400bf92-0000-0300-0000-66f10e760000\"",
+    "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcURAAAAAAAAAA==/",
+    "email": "john.doe@example.com",
+    "_module": "rest_student",
+    "courses": [
+      "maths",
+      "science",
+      "english"
+    ],
+    "_attachments": "attachments/"
+  }
 }
 ```
 
@@ -248,18 +310,45 @@ The `UpdateMany` operation allows you to modify multiple documents. This is help
 1. Add a UpdateMany block to your workflow. Set the `Filter Query` field to your desired query according to your data retrieval and `Update Value` to `{{$request.body}}` to specify the data that will be used to update the existing record.
 2. In the `Http Response` block , set the `Response Variable` field to expression as `{{$block-name.val}}`.
 
+```bash API URL
+<base_url>/students/put/bulk/
+``` 
+
 ![updateMany](/assets/blogs/learn-to-use-cosmos-database-operations/updateMany.png) 
+![updateMany filter](/assets/blogs/learn-to-use-cosmos-database-operations/updateMany-filter.png)
+
 ### Sample Data
+
+
+```json Request Body Data
+{
+  "age": 20,
+}
+```
 
 ```json Response Data
 {
-  "data-result": {
-    "data": [
-      
-    ]
-  },
-  "status": 200
+  "data": [
+    {
+      "id": "3",
+      "_ts": 1727074102,
+      "age": 20,
+      "_rid": "5bQ3ANPWhcUTAAAAAAAAAA==",
+      "dept": "CSE",
+      "name": "Jane Doe",
+      "_etag": "\"14008595-0000-0300-0000-66f10f360000\"",
+      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUTAAAAAAAAAA==/",
+      "email": "jane.doe@example.com",
+      "_module": "rest_student",
+      "courses": [
+        "maths",
+        "science"
+      ],
+      "_attachments": "attachments/"
+    }
+  ]
 }
+
 ```
 
 
@@ -271,23 +360,38 @@ The `DeleteOne` operation deletes a single document based on its unique identifi
 2. In the `Http Response` block , set the `Response Variable` field to expression as `{{$block-name.val}}`.
 
 
+```bash API URL
+<base_url>/student/del/{id}/
+``` 
+
 ![deleteOne](/assets/blogs/learn-to-use-cosmos-database-operations/deleteOne.png)
 ### Sample Data
-
-```json Request Body Data
-{
-    "id": "1" 
-}
-```
+ 
+```json Request Data
+curl -X GET https://api.zeromagic.cloud/api/b819ea802f674352beec615db8297262/dev/operations/student/del/1/ \
+-H "APP-KEY: YOUR_APP_KEY"
+``` 
 
 ```json Response Data
 {
-  "data-result": {
-    "data": [
-      
-    ]
-  },
-  "status": 200
+    "data": {
+        "_attachments": "attachments/",
+        "_etag": "\"14004e6b-0000-0300-0000-66f105130000\"",
+        "_module": "rest_student",
+        "_rid": "5bQ3ANPWhcUOAAAAAAAAAA==",
+        "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUOAAAAAAAAAA==/",
+        "_ts": 1727071507,
+        "age": 21,
+        "courses": [
+            "maths",
+            "science",
+            "english"
+        ],
+        "dept": "CSE",
+        "email": "john.doe@example.com",
+        "id": "1",
+        "name": "John Doe"
+    }
 }
 ```
 
@@ -298,18 +402,58 @@ The `DeleteMany` operation deletes multiple documents based on a query. This is 
 1. Add a DeleteMany block to your workflow. Set the `Delete Query` field to your desired query according to the data that will be used to delete the existing record.
 2. In the `Http Response` block , set the `Response Variable` field to expression as `{{$block-name.val}}`.
 
+```bash API URL
+<base_url>/students/del/bulk/
+``` 
+
 ![deleteMany](/assets/blogs/learn-to-use-cosmos-database-operations/deleteMany.png)
+![deleteMany-filter](/assets/blogs/learn-to-use-cosmos-database-operations/deleteMany-filter.png)
 
 ### Sample Data
 
+```json Request Data
+curl -X GET https://api.zeromagic.cloud/api/b819ea802f674352beec615db8297262/dev/operations/students/del/bulk/ \
+-H "APP-KEY: YOUR_APP_KEY"
+``` 
+
 ```json Response Data
 {
-  "data-result": {
-    "data": [
-      
-    ]
-  },
-  "status": 200
+  "data": [
+    {
+      "id": "2",
+      "_ts": 1727071256,
+      "age": 21,
+      "_rid": "5bQ3ANPWhcUPAAAAAAAAAA==",
+      "dept": "ECE",
+      "name": "Jim Beam",
+      "_etag": "\"1400b966-0000-0300-0000-66f104180000\"",
+      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUPAAAAAAAAAA==/",
+      "email": "jim.beam@example.com",
+      "_module": "rest_student",
+      "courses": [
+        "physics",
+        "english"
+      ],
+      "_attachments": "attachments/"
+    },
+    {
+      "id": "3",
+      "_ts": 1727070004,
+      "age": 20,
+      "_rid": "5bQ3ANPWhcUQAAAAAAAAAA==",
+      "dept": "CSE",
+      "name": "Jane Doe",
+      "_etag": "\"1400b653-0000-0300-0000-66f0ff340000\"",
+      "_self": "dbs/5bQ3AA==/colls/5bQ3ANPWhcU=/docs/5bQ3ANPWhcUQAAAAAAAAAA==/",
+      "email": "jane.doe@example.com",
+      "_module": "rest_student",
+      "courses": [
+        "maths",
+        "science"
+      ],
+      "_attachments": "attachments/"
+    }
+  ]
 }
 ```
 
@@ -330,19 +474,6 @@ Check [here](/datasources/zeromagic-query-language/operators-property/) to learn
 
 
 ![CustomQuery](/assets/blogs/learn-to-use-cosmos-database-operations/customQuery.png)
-
-### Sample Data
-
-```json Response Data
-{
-  "data-result": {
-    "data": [
-      
-    ]
-  },
-  "status": 200
-}
-```
 
 Understanding and utilizing these operations will empower you to manage your Cosmos Database effectively, whether you need to create, read, update, or delete data. Our platform simplifies these tasks, enabling you to focus on building robust applications with ease.
 
