@@ -19,15 +19,21 @@ The Zeromagic Query Language is a JSON-based query language specifically designe
 **Returns**: Return a `val` based on the executed ZQL database query in the editor.
 
 
-```jsx  Custom Query Syntax
+<Tip>
+  Visit the [Zeromagic Query Language](/datasources/zeromagic-query-language/overview) documentation to learn more about the syntax and capabilities of the query language.
+  > Click here for [Query Examples](/datasources/zeromagic-query-language/database-operations)
+</Tip>
+
+
+```jsx Read Query - Custom Query Sample Syntax
 {
   "container": "<container_name>",
+  "fields": ["<field_name_1>", "<field_name_2>",{"alias_name": "<field_name_3>"}],
   "filter": {
     "@sort": {
       "key": "<field_name>",
       "order": "<asc/desc>"
     },
-    "@fields": ["<field_name_1>", "<field_name_2>",{"alias_name": "<field_name_3>"}],
     "<field_name_1>": {
       "@contains": "<substring>",
       "@startswith": "<prefix>",

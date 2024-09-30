@@ -8,7 +8,106 @@ Zeromagic supports a range of database methods to perform CRUD (Create, Read, Up
 
 ## Read Operations
 
-a) `readOne`: Retrieve a single record by its `ID`.
+### `readOne` & `readMany`
+
+The ReadOne and ReadMany both has same syntax but ReadOne returns only single object as dict where ReadMany returns multiple objects as list. The query object must contain the `container` and `filter` properties. `fields` property is optional which returns a particular fields of created records.
+
+<CodeGroup>
+```jsx Example - 1
+//Let's fetch list of employees from 'employees' container/table where departments must be in Marketting,Developers and sorting by joined_at in descending order
+{
+  "container": "employees",
+  "fields": ["id","age",{"dept":"department"},{"name": "full_name"}],
+  "filter": {
+    "@sort": {
+      "key": "joined_at",
+      "order": "desc"
+    },
+    "department": {
+      "@in": ["Marketting", "Developers"],
+    }
+  }
+}
+```
+```jsx Example - 2
+//Let's fetch list of orders from 'product_orders' container/table where city=Chennai and payment_status=failed,pending with sorting by order_placed_at in ascending order
+{
+  "container": "product_orders",
+  "filter": {
+    "@sort": {
+      "key": "order_placed_at",
+      "order": "asc"
+    },
+    "@and":[
+      {
+        "city": {
+          "@eq": "Chennai"
+        }
+      },
+      {
+        "payment_status": {
+          "@in": ["failed","pending"]
+        }
+      }
+    ],
+  }
+}
+```
+```jsx Allowed Property Syntax
+{
+  //'container' key is required
+  "container": "<container_name>",
+  //'fields' key is optional
+  "fields": ["<field_name_1>", "<field_name_2>",{"alias_name": "<field_name_3>"}],
+  //'filter' key is required. You can set- "filter" : {} => to fetch all records
+  "filter": { 
+    "@sort": {
+      "key": "<field_name>",
+      "order": "<asc/desc>"
+    },
+    "<field_name_1>": {
+      "@contains": "<substring>",
+      "@startswith": "<prefix>",
+      "@in": ["<value_1>", "<value_2>"],
+      "@nin": ["<value_1>", "<value_2>"],
+      "@eq": "<value>",
+      "@ne": "<value>",
+      "@gt": "<integer>",
+      "@lt": "<integer>",
+      "@gte": "<integer>",
+      "@lte": "<integer>"
+    },
+    "@and":[
+      {
+        "<field_name_1>": {
+          "@eq": "<value>"
+        }
+      },
+      {
+        "<field_name_2>": {
+          "@gt": "<integer>"
+        }
+      }
+    ],
+    "@or":[
+      {
+        "<field_name_1>": {
+          "@contains": "<substring>"
+        }
+      },
+      {
+        "<field_name_2>": {
+          "@in": ["<value_1>", "<value_2>"]
+        }
+      }
+    ]
+  }
+}
+```
+</CodeGroup>
+
+
+{/* a) `readOne`: Retrieve a single record by its `ID`.
 
 ```jsx readOne
 {
@@ -41,11 +140,98 @@ b) `readMany`: Retrieve multiple records based on specific criteria using `filte
             ]
         } 
 }
-```
+``` */}
 
 ## Create Operations
 
-a) `createOne`: Create a new record with the provided data in the `item property`.
+### `createOne`
+
+The CreateOne method is used to create a single item in the specified container. The query object must contain the `container` and `item` properties. `fields` property is optional which returns a particular fields of created records.
+
+<CodeGroup>
+```jsx CreateOne Example
+//Let's insert a new employee data into 'employee' container/table and return the id,name after creation
+{
+    "container": "employee",
+    "item": {
+        "id": "1",
+        "name": "Zeromagic Genie",
+        "age": 25,
+        "department" : "Developers",
+        "country" : "India"
+    },
+    "fields":["id","name"]
+}
+```
+```jsx Allowed Property Syntax
+{
+  //'container' key is required
+  "container": "<container_name>",
+  //'fields' key is optional
+  "fields": ["<field_name_1>", "<field_name_2>",{"alias_name": "<field_name_3>"}],
+  //'item' key is required and single item to create is allowed
+  "item" : {
+    "<field_name_1>": "<value_1>",
+    "<field_name_2>": "<value_2>",
+    "<field_name_3>": "<value_3>",
+  }
+}
+```
+</CodeGroup>
+
+
+### `createMany` 
+
+The CreateMany method is used to create multiple items in the specified container. The query object must contain the `container` and `items` properties. `fields` property is optional which returns a particular fields of created records.
+
+<CodeGroup>
+```jsx CreateMany Example
+//Let's insert multiple employee data into 'employee' container/table and return the id,name after creation
+{
+    "container": "employee",
+    "items": [
+        {
+            "id": "1",
+            "name": "Zeromagic Genie",
+            "age": 25,
+            "department" : "Developers",
+            "country" : "India"
+        },
+        {
+            "id": "2",
+            "name": "Alibaba Genie",
+            "age": 22,
+            "department" : "Marketting",
+            "country" : "USA"
+        },
+    ]
+    "fields":["id","name"]
+}
+```
+```jsx Allowed Property Syntax
+{
+  //'container' key is required
+  "container": "<container_name>",
+  //'fields' key is optional
+  "fields": ["<field_name_1>", "<field_name_2>",{"alias_name": "<field_name_3>"}],
+  //'items' key is required and multiple items as list
+  "items" : [
+    {
+        "<field_name_1>": "<value_1>",
+        "<field_name_2>": "<value_2>",
+        "<field_name_3>": "<value_3>",
+    },
+    {
+        "<field_name_1>": "<value_1>",
+        "<field_name_2>": "<value_2>",
+        "<field_name_3>": "<value_3>",
+    }
+  ]
+}
+```
+</CodeGroup>
+
+{/* a) `createOne`: Create a new record with the provided data in the `item property`.
 
 ```jsx createOne
 {
@@ -79,10 +265,120 @@ b) `createMany`: Create multiple records in a single operation using the `items 
     }
    ] 
 }
-```
+``` */}
 ## Update Operations
 
-a) `updateOne`: Update an existing record based on its `ID` and new data provided in the `update property` within the query.
+### `updateOne`
+
+The updateOne method is used to update a single item in the specified container with `id` field. The query object must contain the `container`, `id` and `update` properties. `fields` property is optional which returns a particular fields of updated records.
+
+<CodeGroup>
+```jsx updateOne Example
+//Let's update the work_location of employee id=1 as Chennai
+{
+    "container": "employee",
+    "id": "1",
+    "update": {
+        "work_location" : "Chennai"
+    }
+    "fields":["id","name",{"location":"work_location"}]
+}
+```
+```jsx Allowed Property Syntax
+{
+  //'container' key is required
+  "container": "<container_name>",
+  //'fields' key is optional
+  "fields": ["<field_name_1>", "<field_name_2>",{"alias_name": "<field_name_3>"}],
+  //id
+  "id": "<id>",
+  //'update' key is required and data to update
+  "update" : {
+    "<field_name_1>": "<value_1>",
+    "<field_name_2>": "<value_2>",
+    "<field_name_3>": "<value_3>",
+  }
+}
+```
+</CodeGroup>
+
+
+### `updateMany`
+
+The updateMany method is used to update multiple item in the specified container. The query object must contain the `container`, `filter` and `update` properties. `fields` property is optional which returns a particular fields of updated records.
+
+<CodeGroup>
+```jsx updateMany Example
+//Let's update the all the employees with engineering level as SDE-1
+{
+    "container": "employee",
+    "filter" : {},
+    "update": {
+        "engineer_level" : "SDE-1"
+    }
+    "fields":["id","name"]
+}
+```
+```jsx Allowed Property Syntax
+{
+  //'container' key is required
+  "container": "<container_name>",
+  //'fields' key is optional
+  "fields": ["<field_name_1>", "<field_name_2>",{"alias_name": "<field_name_3>"}],
+  //'update' key is required and data to update
+  "update" : {
+    "<field_name_1>": "<value_1>",
+    "<field_name_2>": "<value_2>",
+    "<field_name_3>": "<value_3>",
+  }
+  //'filter' key is required. You can set- "filter" : {} => to update all records
+  "filter" : { 
+    "@sort": {
+      "key": "<field_name>",
+      "order": "<asc/desc>"
+    },
+    "<field_name_1>": {
+      "@contains": "<substring>",
+      "@startswith": "<prefix>",
+      "@in": ["<value_1>", "<value_2>"],
+      "@nin": ["<value_1>", "<value_2>"],
+      "@eq": "<value>",
+      "@ne": "<value>",
+      "@gt": "<integer>",
+      "@lt": "<integer>",
+      "@gte": "<integer>",
+      "@lte": "<integer>"
+    },
+    "@and":[
+      {
+        "<field_name_1>": {
+          "@eq": "<value>"
+        }
+      },
+      {
+        "<field_name_2>": {
+          "@gt": "<integer>"
+        }
+      }
+    ],
+    "@or":[
+      {
+        "<field_name_1>": {
+          "@contains": "<substring>"
+        }
+      },
+      {
+        "<field_name_2>": {
+          "@in": ["<value_1>", "<value_2>"]
+        }
+      }
+    ]
+  }
+}
+```
+</CodeGroup>
+
+{/* a) `updateOne`: Update an existing record based on its `ID` and new data provided in the `update property` within the query.
 
 ```jsx updateOne
 {
@@ -107,11 +403,107 @@ b) `updateMany`: Update multiple records based on `filter property` and new data
        "department": 'Science'
    }
 }
-```
+``` */}
 
 ## Delete Operations
 
-a) `deleteOne`: Delete a single record by its `ID`.
+### `deleteOne`
+
+The deleteOne method is used to delete a single item in the specified container with `id` field. The query object must contain the `container`, `id` properties. `fields` property is optional which returns a particular fields of deleted records.
+
+<CodeGroup>
+```jsx deleteOne Example
+//Let's delete the employee with id=1
+{
+    "container": "employee",
+    "id": "1",
+    "fields":["id","name",{"location":"work_location"}]
+}
+```
+```jsx Allowed Property Syntax
+{
+  //'container' key is required
+  "container": "<container_name>",
+  //'fields' key is optional
+  "fields": ["<field_name_1>", "<field_name_2>",{"alias_name": "<field_name_3>"}],
+  //'id' key is required
+  "id": "<id>"
+}
+```
+</CodeGroup>
+
+### `deleteMany` 
+
+The deleteMany method is used to delete mutliple items in the specified container. The query object must contain the `container`, `filter` properties. `fields` property is optional which returns a particular fields of deleted records.
+
+<CodeGroup>
+```jsx deleteMany Example
+//Let's delete the employee where work_location='Chennai'
+{
+    "container": "employee",
+    "filter" : {
+        "work_location" : {
+            "@eq" : "Chennai"
+        }
+    },
+    "fields":["id"]
+}
+```
+```jsx Allowed Property Syntax
+{
+  //'container' key is required
+  "container": "<container_name>",
+  //'fields' key is optional
+  "fields": ["<field_name_1>", "<field_name_2>",{"alias_name": "<field_name_3>"}],
+  //'filter' key is required. You can set- "filter" : {} => to update all records
+  "filter" : { 
+    "@sort": {
+      "key": "<field_name>",
+      "order": "<asc/desc>"
+    },
+    "<field_name_1>": {
+      "@contains": "<substring>",
+      "@startswith": "<prefix>",
+      "@in": ["<value_1>", "<value_2>"],
+      "@nin": ["<value_1>", "<value_2>"],
+      "@eq": "<value>",
+      "@ne": "<value>",
+      "@gt": "<integer>",
+      "@lt": "<integer>",
+      "@gte": "<integer>",
+      "@lte": "<integer>"
+    },
+    "@and":[
+      {
+        "<field_name_1>": {
+          "@eq": "<value>"
+        }
+      },
+      {
+        "<field_name_2>": {
+          "@gt": "<integer>"
+        }
+      }
+    ],
+    "@or":[
+      {
+        "<field_name_1>": {
+          "@contains": "<substring>"
+        }
+      },
+      {
+        "<field_name_2>": {
+          "@in": ["<value_1>", "<value_2>"]
+        }
+      }
+    ]
+  }
+}
+```
+</CodeGroup>
+
+
+{/* a) `deleteOne`: Delete a single record by its `ID`.
 
 
 ```jsx deleteOne
@@ -133,4 +525,4 @@ b) `deleteMany`: Delete multiple records based on specific criteria using `filte
     }  
   }
 }
-```
+``` */}
